@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+#parallax {
+    perspective: 100px;
+    /* height: 100vh; */
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    margin-left: -1500px;
+}
+
+.parallax__layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.parallax__layer img {
+    display: block;
+    position: absolute;
+    bottom: 0;
+}
+
+.parallax_layer_logo {
+    transform: translateZ(-450px) scale(5.5);
+    animation: show 3s 2s forwards;
+    opacity: 0;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.parallax__layer__1 {
+    transform: translateZ(-350px) scale(4.5);
+    top: 375vh;
+}
+
+.parallax__layer__2 {
+    transform: translateZ(-300px) scale(4);
+    top: 350vh;
+}
+
+.parallax__layer__3 {
+    transform: translateZ(-250px) scale(3.5);
+    top: 350vh;
+}
+
+.parallax__layer__4 {
+    transform: translateZ(-200px) scale(3);
+    top: 325vh;
+}
+
+.parallax__layer__5 {
+    transform: translateZ(-150px) scale(2.5);
+    top: 335vh;
+}
+
+.parallax__layer__6 {
+    transform: translateZ(-100px) scale(2);
+    top: 315vh;
+}
+
+.parallax__layer__7 {
+    transform: translateZ(-50px) scale(2.5);
+    top: 315vh;
+    z-index: 2;
+}
+
+#ground {
+    position: absolute;
+    width: 500vw;
+    height: 29vh;
+    transform: translateZ(-50px) scale(2.5);
+    top: 300vh;
+    perspective: 35px;
+    left: -180vw;
+}
+
+#floor {
+    background-image: url("../resourses/img/road.svg");
+    width: 500vw;
+    height: 100%;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 20vh;
+    position: absolute;
+    transform: rotateX(10deg);
+}
+
+
+/**3D**/
+
+#bld_nxs {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+
+/***/

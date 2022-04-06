@@ -1,33 +1,32 @@
-
-window.onload = function () {
+window.onload = function() {
     //Creación de capa Sky
-  
-  	var x = document.createElement("div");
-  	x.className = "sky";
-  	document.querySelector('#hero').appendChild(x);
 
-	//Creación de capa sky2  
-  
-  	var w = document.createElement("div");
-  	w.className = "sky2";
-  	document.querySelector('#hero').appendChild(w);
-  
-	//Agregado de ShoothingStars  
-  
-  	var y = document.createElement("div");
-  	y.className = "s_star";
-  	document.querySelector('.sky').appendChild(y);
-  
+    var x = document.createElement("div");
+    x.className = "sky";
+    document.querySelector('#sky').appendChild(x);
+
+    //Creación de capa sky2  
+
+    var w = document.createElement("div");
+    w.className = "sky2";
+    document.querySelector('#sky').appendChild(w);
+
+    //Agregado de ShoothingStars  
+
+    var y = document.createElement("div");
+    y.className = "s_star";
+    document.querySelector('.sky').appendChild(y);
+
     var v = document.createElement("div");
-  	v.className = "s_star";
-  	document.querySelector('.sky').appendChild(v);
-  
+    v.className = "s_star";
+    document.querySelector('.sky').appendChild(v);
+
     var u = document.createElement("div");
-  	u.className = "s_star";
-  	document.querySelector('.sky').appendChild(u);
-  
-  
-  	//Creación de Estrellas
+    u.className = "s_star";
+    document.querySelector('.sky').appendChild(u);
+
+
+    //Creación de Estrellas
 
     var z = {};
     var stars = 200;
