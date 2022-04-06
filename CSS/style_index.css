@@ -2,21 +2,23 @@
     box-sizing: border-box;
 }
 
-html,
+
+/*html,*/
+
 body {
     background-color: #000;
-    overflow-x: hidden;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 #parallax {
     perspective: 100px;
-    /* height: 100vh; */
+    height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
     position: absolute;
-    top: 0;
     left: 50%;
-    right: 0;
     bottom: 0;
     margin-left: -1500px;
 }
@@ -104,19 +106,18 @@ body {
     background-repeat: repeat;
     background-size: 20vh;
     position: absolute;
-    transform: rotateX(10deg);
+    transform: rotateX(12deg);
 }
 
 
 /**3D**/
 
 #bld_nxs {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    position: relative;
+    z-index: 99;
+    width: 100vw;
+    height: 100vh;
+    top: 250vh;
     margin: auto;
 }
 
