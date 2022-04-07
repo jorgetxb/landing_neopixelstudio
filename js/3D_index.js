@@ -73,7 +73,8 @@ const res_height = height_position();
 function render() {
     requestAnimationFrame(render);
 
-    console.log(window.pageYOffset);
+    /*console.log(window.pageYOffset);*/
+    console.log(height_position());
     // Height
     if (window.pageYOffset > (_docHeight / 2)) {
         if (window.pageYOffset > _docHeight * 0.75) {
