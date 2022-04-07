@@ -7,20 +7,29 @@
 
 body {
     background-color: #000;
-    overflow: hidden;
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
 }
 
 #parallax {
     perspective: 100px;
     height: 100vh;
     overflow-x: hidden;
-    overflow-y: auto;
-    position: absolute;
-    left: 50%;
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
     bottom: 0;
-    margin-left: -1500px;
+    /* margin-left: -1500px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .parallax__layer {
@@ -29,6 +38,10 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .parallax__layer img {
@@ -37,10 +50,16 @@ body {
     bottom: 0;
 }
 
+.parallax__layer__1 {
+    transform: translateZ(-350px) scale(4.5);
+    top: 375vh;
+}
+
 .parallax_layer_logo {
     transform: translateZ(-450px) scale(5.5);
     animation: show 3s 2s forwards;
     opacity: 0;
+    top: 150vh;
 }
 
 @keyframes show {
@@ -50,11 +69,6 @@ body {
     100% {
         opacity: 1;
     }
-}
-
-.parallax__layer__1 {
-    transform: translateZ(-350px) scale(4.5);
-    top: 375vh;
 }
 
 .parallax__layer__2 {
@@ -83,19 +97,19 @@ body {
 }
 
 .parallax__layer__7 {
-    transform: translateZ(-50px) scale(2.5);
+    transform: translateZ(0px) scale(2.5);
     top: 315vh;
     z-index: 2;
 }
 
-#ground {
+.parallax__layer__ground {
     position: absolute;
-    width: 500vw;
-    height: 29vh;
-    transform: translateZ(-50px) scale(2.5);
+    width: 100vw;
+    height: 50vh;
+    transform: translateZ(0px) scale(2.5);
     top: 300vh;
     perspective: 35px;
-    left: -180vw;
+    /* left: -150vw; */
 }
 
 #floor {
@@ -104,8 +118,7 @@ body {
     height: 100%;
     background-position: center;
     background-repeat: repeat;
-    background-size: 20vh;
-    position: absolute;
+    background-size: 25vh;
     transform: rotateX(12deg);
 }
 
@@ -113,12 +126,16 @@ body {
 /**3D**/
 
 #bld_nxs {
-    position: relative;
-    z-index: 99;
+    position: absolute;
+    top: 310vh;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
     width: 100vw;
     height: 100vh;
-    top: 250vh;
-    margin: auto;
+    margin: 0 auto;
+    /* margin-left: 250vw; */
 }
 
 

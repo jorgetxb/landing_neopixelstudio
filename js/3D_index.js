@@ -47,7 +47,9 @@ scene.add(ambient);
 /***Height, Angle, Zoom (Perspective)***/
 
 // Camera Height
-let cam_height = 500;
+/*let cam_height = 1750;*/
+let cam_height = 1000;
+
 
 
 //Speed down camera
@@ -70,6 +72,8 @@ const res_height = height_position();
 // Render
 function render() {
     requestAnimationFrame(render);
+
+    console.log(window.pageYOffset);
     // Height
     if (window.pageYOffset > (_docHeight / 2)) {
         if (window.pageYOffset > _docHeight * 0.75) {
