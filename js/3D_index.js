@@ -30,7 +30,9 @@ const far = 5000;
 var cam_angle_init = -0.35;
 camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 
-camera.position.set(0, 1500, 2000);
+// Camera Height
+const cam_height_init = 1200;
+camera.position.set(0, cam_height_init, 2000);
 camera.rotation.set(cam_angle_init, 0, 0);
 
 
@@ -46,55 +48,37 @@ scene.add(ambient);
 
 /***Height, Angle, Zoom (Perspective)***/
 
-// Camera Height
-/*let cam_height = 1750;*/
-let cam_height = 1000;
-
-
-
-//Speed down camera
-/*const down_speed1 = 1200;*/
-const down_speed1 = 12;
-/*const down_speed2 = 7000;*/
-const down_speed2 = 70;
-
-
-// Capture height breakpoint
-function height_position() {
-    var d1 = camera.position.y = cam_height - (0.75) * down_speed1;
-    var d2 = camera.position.y = cam_height - (0.75) * down_speed2;
-    const res = d1 - d2;
-    return res;
-}
-
-const res_height = height_position();
-
 // Render
 function render() {
     requestAnimationFrame(render);
 
-    /*console.log(window.pageYOffset);*/
-    console.log(height_position());
-    // Height
-    if (window.pageYOffset > (_docHeight / 2)) {
-        if (window.pageYOffset > _docHeight * 0.75) {
-            camera.position.y = camera.position.y = cam_height - (window.pageYOffset / _docHeight) * down_speed2 + res_height;
-        } else {
-            camera.position.y = cam_height - (window.pageYOffset / _docHeight) * down_speed1;
-        }
-    }
+    // Angle & Height
 
-    // Angle
     var speed_cam_change = 0.75;
-    var cam_angle = -0.35;
-    let speed_angle_change = 4;
+    const speed_angle_change = 0.01;
 
-    if (window.pageYOffset > _docHeight * speed_cam_change) {
-        cam_angle += (window.pageYOffset / _docHeight) * speed_angle_change - ((_docHeight * speed_cam_change) / _docHeight) * speed_angle_change;
-        camera.rotation.set(cam_angle, 0, 0);
+    var cam_angle = -0.35;
+    /*Breakpoint*/
+    const b = 0;
+
+    if (window.pageYOffset > 0) {
+        if (cam_angle < b) {
+            camera.position.y = cam_height_init - (window.pageYOffset * 25);
+            cam_angle += (window.pageYOffset * speed_angle_change);
+            camera.rotation.set(cam_angle, 0, 0);
+            console.log(cam_angle);
+        } else {
+            console.log("esto funciona");
+            camera.rotation.set(b, 0, 0);
+            camera.position.y = cam_height_init;
+        }
     } else {
         camera.rotation.set(cam_angle_init, 0, 0);
+        camera.position.y = cam_height_init;
     }
+
+    /*console.log(cam_angle);
+    console.log(camera.position.y);*/
 
     // Zoom
 
