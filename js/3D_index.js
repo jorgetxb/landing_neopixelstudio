@@ -54,41 +54,46 @@ function render() {
 
     // Angle & Height
 
-    var speed_cam_change = 0.75;
-    const speed_angle_change = 0.01;
+    const speed_cam_change = 750;
+    const speed_angle_change = 0.004;
+    const speed_height_change = 7;
 
     var cam_angle = -0.35;
     /*Breakpoint*/
     const b = 0;
 
     if (window.pageYOffset > 0) {
-        if (cam_angle < b) {
-            camera.position.y = cam_height_init - (window.pageYOffset * 25);
-            cam_angle += (window.pageYOffset * speed_angle_change);
-            camera.rotation.set(cam_angle, 0, 0);
-            console.log(cam_angle);
-        } else {
-            console.log("esto funciona");
-            camera.rotation.set(b, 0, 0);
-            camera.position.y = cam_height_init;
+        camera.position.y = cam_height_init - (window.pageYOffset * speed_height_change);
+        cam_angle += (window.pageYOffset * speed_angle_change);
+        camera.rotation.set(cam_angle, 0, 0);
+        var scrolled = (window.pageYOffset / speed_cam_change) + 1;
+        transformValue = 'scale(' + scrolled + ')';
+        container.style.transform = transformValue;
+        $("html, body").animate({ scrollTop: $('#trigger').offset().top }, 6000);
+        $("#parallax__layer__1").animate({ top: "500vh" }, 1500);
+        $("#parallax__layer__2").animate({ top: "475vh" }, 1500);
+        $("#parallax__layer__3").animate({ top: "475vh" }, 1500);
+        $("#parallax__layer__4").animate({ top: "460vh" }, 1500);
+        $("#parallax__layer__5").animate({ top: "475vh" }, 1500);
+        $("#parallax__layer__6").animate({ top: "425vh" }, 1500);
+        $("#parallax__layer__7").animate({ top: "425vh" }, 1500);
+        $("#parallax__layer__ground").animate({ top: "445vh" }, 1500);
+        $("#floor").animate({ height: "15vh" }, 1500);
+        /*console.log(cam_angle);*/
+        /*console.log(camera.position.y);*/
+        /*console.log(scrolled);*/
+        if (cam_angle > b) {
+            camera.rotation.set(-0.02, 0, 0);
+            camera.position.y = 600;
+            document.getElementById("parallax").style.overflowY = "hidden";
+            var body = document.getElementsByTagName("body"); //*
+            for (var i = 0; i < body.length; i++) {
+                body[i].style.overflowY = "hidden";
+            };
         }
     } else {
         camera.rotation.set(cam_angle_init, 0, 0);
         camera.position.y = cam_height_init;
-    }
-
-    /*console.log(cam_angle);
-    console.log(camera.position.y);*/
-
-    // Zoom
-
-    if (window.scrollY > _docHeight * speed_cam_change) {
-        var scrolled = (window.pageYOffset / _docHeight) * 10 - ((_docHeight * speed_cam_change) / _docHeight) * 10 + 1;
-        transformValue = 'scale(' + scrolled + ')';
-        document.body.style.transform = transformValue;
-        container.style.transform = transformValue;
-    } else {
-        document.body.style.transform = "scale(1)";
         container.style.transform = "scale(1)";
     }
 

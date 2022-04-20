@@ -2,11 +2,38 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     background-color: #000;
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+}
+
+.loader {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 100;
+}
+
+#icon_loader {
+    width: 150px;
+    height: 150px;
+    background-image: url('http://neopixel.studio/wp-content/uploads/neopixelstudio.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
 }
 
 #parallax {
@@ -43,7 +70,11 @@ body {
     transform: translateZ(-450px) scale(5.5);
     animation: show 3s 2s forwards;
     opacity: 0;
-    top: 200vh;
+    top: 150vh;
+}
+
+.parallax_layer_logo img {
+    max-height: 50%;
 }
 
 @keyframes show {
@@ -96,18 +127,16 @@ body {
     width: 100vw;
     height: 50vh;
     transform: translateZ(0px) scale(2.5);
-    top: 310vh;
-    perspective: 35px;
+    top: 360vh;
 }
 
 #floor {
     background-image: url("../resourses/img/road.svg");
     width: 100vw;
-    height: 20vh;
+    height: 50vh;
     background-position: center;
     background-repeat: repeat;
     background-size: 20vh;
-    transform: rotateX(12deg);
 }
 
 
@@ -128,7 +157,8 @@ body {
 
 /***/
 
-.trigger {
-    height: 30px;
+#trigger {
+    display: none;
+    height: 250px;
     width: 100vw;
 }

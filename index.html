@@ -8,43 +8,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./CSS/style_index.css" />
     <link rel="stylesheet" href="./CSS/sky.css" />
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Neo Pixel Studio</title>
 </head>
 
 <body>
+    <div class="loader">
+        <div id="icon_loader"></div>
+    </div>
+
     <div id="sky"></div>
 
     <div id="parallax">
-        <div class="parallax__layer parallax__layer__1">
+        <div id="parallax__layer__1" class="parallax__layer parallax__layer__1">
             <img src="./resourses/img/mountains1.svg" alt="" />
         </div>
-        <div class="parallax__layer parallax_layer_logo">
+        <div id="parallax_layer_logo" class="parallax__layer parallax_layer_logo">
             <img src="./resourses/img/logo_sky.png" alt="" />
         </div>
-        <div class="parallax__layer parallax__layer__2">
+        <div id="parallax__layer__2" class="parallax__layer parallax__layer__2">
             <img src="./resourses/img/mountains2.svg" alt="" />
         </div>
-        <div class="parallax__layer parallax__layer__3">
+        <div id="parallax__layer__3" class="parallax__layer parallax__layer__3">
             <img src="./resourses/img/mountains3.svg" alt="" />
         </div>
-        <div class="parallax__layer parallax__layer__4">
+        <div id="parallax__layer__4" class="parallax__layer parallax__layer__4">
             <img src="./resourses/img/city_behind.png" alt="" />
         </div>
-        <div class="parallax__layer parallax__layer__5">
+        <div id="parallax__layer__5" class="parallax__layer parallax__layer__5">
             <img src="./resourses/img/citycenter.png" alt="" />
         </div>
-        <div class="parallax__layer parallax__layer__6">
+        <div id="parallax__layer__6" class="parallax__layer parallax__layer__6">
             <img src="./resourses/img/city_front.png" alt="" />
         </div>
-        <div class="parallax__layer parallax__layer__7">
+        <div id="parallax__layer__7" class="parallax__layer parallax__layer__7">
             <img src="./resourses/img/blds.png" alt="" />
         </div>
 
-        <div class="parallax__layer parallax__layer__ground">
-            <!-- <div id="floor"></div> -->
+        <div id="parallax__layer__ground" class="parallax__layer parallax__layer__ground">
+            <div id="floor"></div>
         </div>
 
         <!--3D-->
@@ -52,12 +54,11 @@
         <!-- -->
     </div>
 
-    <div class="trigger"></div>
+    <div id="trigger"></div>
 
 </body>
 
 <script src="./js/sky.js"></script>
-<!-- <script src="./js/city_index.js"></script> -->
 
 <!--3D-->
 <script src="./js/three.min.js"></script>
