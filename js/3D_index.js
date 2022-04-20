@@ -69,16 +69,22 @@ function render() {
         var scrolled = (window.pageYOffset / speed_cam_change) + 1;
         transformValue = 'scale(' + scrolled + ')';
         container.style.transform = transformValue;
-        $("html, body").animate({ scrollTop: $('#trigger').offset().top }, 6000);
-        $("#parallax__layer__1").animate({ top: "500vh" }, 1500);
-        $("#parallax__layer__2").animate({ top: "475vh" }, 1500);
-        $("#parallax__layer__3").animate({ top: "475vh" }, 1500);
-        $("#parallax__layer__4").animate({ top: "460vh" }, 1500);
-        $("#parallax__layer__5").animate({ top: "475vh" }, 1500);
-        $("#parallax__layer__6").animate({ top: "425vh" }, 1500);
-        $("#parallax__layer__7").animate({ top: "425vh" }, 1500);
-        $("#parallax__layer__ground").animate({ top: "445vh" }, 1500);
-        $("#floor").animate({ height: "15vh" }, 1500);
+        $("html, body").animate({ scrollTop: $('#trigger').offset().top }, 4500);
+        $("#parallax__layer__1").animate({ top: "500vh" }, 1000);
+        $("#parallax__layer__2").animate({ top: "475vh" }, 1000);
+        $("#parallax__layer__3").animate({ top: "475vh" }, 1000);
+        $("#parallax__layer__4").animate({ top: "460vh" }, 1000);
+        $("#parallax__layer__5").animate({ top: "475vh" }, 1000);
+        $("#parallax__layer__6").animate({ top: "465vh" }, 1000);
+        $("#parallax__layer__7").animate({ top: "425vh" }, 1000);
+        $("#parallax__layer__ground1").animate({ top: "410vh" }, 1000);
+        $("#floor1").animate({ height: "15vh" }, 1000);
+        $("#parallax__layer__ground2").animate({ top: "425vh" }, 1000);
+        $("#floor2").animate({ height: "15vh" }, 1000);
+        $("#parallax__layer__ground3").animate({ top: "435vh" }, 1000);
+        $("#floor3").animate({ height: "15vh" }, 1000);
+        $("#parallax__layer__ground4").animate({ top: "440vh" }, 1000);
+        $("#floor4").animate({ height: "15vh" }, 1000);
         /*console.log(cam_angle);*/
         /*console.log(camera.position.y);*/
         /*console.log(scrolled);*/

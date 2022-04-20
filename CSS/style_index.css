@@ -113,30 +113,90 @@ body {
 
 .parallax__layer__6 {
     transform: translateZ(-100px) scale(2);
-    top: 360vh;
+    top: 375vh;
 }
 
 .parallax__layer__7 {
-    transform: translateZ(0px) scale(2.5);
-    top: 345vh;
+    transform: translateZ(0px) scale(3.5);
+    /*2.5*/
+    top: 350vh;
     z-index: 1;
 }
 
-.parallax__layer__ground {
+.parallax__layer__ground1 {
     position: absolute;
     width: 100vw;
-    height: 50vh;
+    height: 20vh;
     transform: translateZ(0px) scale(2.5);
-    top: 360vh;
+    top: 330vh;
+    perspective: 100px;
 }
 
-#floor {
-    background-image: url("../resourses/img/road.svg");
+#floor1 {
+    background-image: url("../resourses/img/road1.svg");
     width: 100vw;
-    height: 50vh;
+    height: 15vh;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 2vh;
+    transform: rotateX(45deg);
+}
+
+.parallax__layer__ground2 {
+    position: absolute;
+    width: 100vw;
+    height: 30vh;
+    transform: translateZ(0px) scale(2.5);
+    top: 350vh;
+    perspective: 100px;
+}
+
+#floor2 {
+    background-image: url("../resourses/img/road2.svg");
+    width: 100vw;
+    height: 20vh;
     background-position: center;
     background-repeat: repeat;
     background-size: 20vh;
+    transform: rotateX(45deg);
+}
+
+.parallax__layer__ground3 {
+    position: absolute;
+    width: 100vw;
+    height: 20vh;
+    transform: translateZ(0px) scale(2.5);
+    top: 390vh;
+    perspective: 100px;
+}
+
+#floor3 {
+    background-image: url("../resourses/img/road1.svg");
+    width: 100vw;
+    height: 20vh;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 4vh;
+    transform: rotateX(20deg);
+}
+
+.parallax__layer__ground4 {
+    position: absolute;
+    width: 100vw;
+    height: 5vh;
+    transform: translateZ(0px) scale(2.5);
+    top: 415vh;
+    perspective: 100px;
+}
+
+#floor4 {
+    background-image: url("../resourses/img/road3.svg");
+    width: 100vw;
+    height: 10vh;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 2vh;
+    transform: rotateX(20deg);
 }
 
 
