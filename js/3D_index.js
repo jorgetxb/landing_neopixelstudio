@@ -1,3 +1,50 @@
+//Back to the start
+window.scrollTo(0, 0);
+
+//loader page
+setTimeout(function() {
+    document.querySelector(".loader").style.display = 'none';
+}, 2000);
+
+//Activate Interactive Option
+document.getElementById("classic").addEventListener("click", function() {
+    var interactive_elems = document.getElementsByClassName("interactive");
+    for (var i = 0; i < interactive_elems.length; i++) {
+        interactive_elems[i].style.display = "none";
+    }
+    document.getElementById("classic").style.display = "block";
+});
+
+//Unblock page and effects
+function unlock() {
+
+    var time_effect = 4000;
+    //Artifice to properly work on the web recharge
+    setTimeout(function() { document.getElementById("trigger").style.display = "block"; }, time_effect);
+
+    document.body.style.overflowX = "hidden";
+    document.body.style.overflowY = "auto";
+    document.getElementById("parallax").style.overflowX = "hidden";
+    document.getElementById("parallax").style.overflowY = "auto";
+
+    $(".choose").animate({
+        opacity: "0",
+        display: "none"
+    }, time_effect);
+
+    function mouse_scroll() {
+        document.querySelector(".mouse_svg").style.display = "flex";
+        $(".mouse_svg").animate({
+            opacity: "0",
+            display: "none"
+        }, time_effect);
+    };
+
+    setTimeout(mouse_scroll, time_effect);
+
+}
+
+//Global variables
 var _docHeight = (document.height !== undefined) ? document.height : document.body.offsetHeight;
 var _docWidth = (document.width !== undefined) ? document.width : document.body.offsetWidth;
 
@@ -76,7 +123,8 @@ function render() {
         $("#parallax__layer__4").animate({ top: "460vh" }, 1000);
         $("#parallax__layer__5").animate({ top: "475vh" }, 1000);
         $("#parallax__layer__6").animate({ top: "465vh" }, 1000);
-        $("#parallax__layer__7").animate({ top: "425vh" }, 1000);
+        $("#parallax__layer__7").animate({ top: "465vh" }, 1000);
+        $("#parallax__layer__8").animate({ top: "423vh" }, 1000);
         $("#parallax__layer__ground1").animate({ top: "410vh" }, 1000);
         $("#floor1").animate({ height: "15vh" }, 1000);
         $("#parallax__layer__ground2").animate({ top: "425vh" }, 1000);

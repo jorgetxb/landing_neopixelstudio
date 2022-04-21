@@ -1,16 +1,4 @@
 window.onload = function() {
-
-    //Back to the start
-    setTimeout(function() { document.getElementById("trigger").style.display = "block"; }, 2000);
-
-    window.scrollTo(0, 0);
-
-    //loader
-    var loader = document.querySelector(".loader");
-    setTimeout(function() {
-        loader.style.display = 'none';
-    }, 2000);
-
     //Creación de capa Sky
 
     var x = document.createElement("div");

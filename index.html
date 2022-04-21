@@ -9,12 +9,27 @@
     <link rel="stylesheet" href="./CSS/style_index.css" />
     <link rel="stylesheet" href="./CSS/sky.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <title>Neo Pixel Studio</title>
+
 </head>
 
 <body>
     <div class="loader">
         <div id="icon_loader"></div>
+    </div>
+
+    <div class="choose">
+        <div onclick="unlock()" id="classic" class="button"> <a>Clásico</a> </div>
+        <div onclick="unlock()" id="interactive">
+            <div class="info_beta">(Beta, Iphone/Safari not supported)</div>
+            <div class="button"> <a>Interactivo</a> </div>
+        </div>
+    </div>
+
+    <div class="mouse_svg">
+        <lottie-player src="./resourses/img/scroll_down.json" background="transparent" speed="1.5" loop autoplay>
+        </lottie-player>
     </div>
 
     <div id="sky"></div>
@@ -36,42 +51,47 @@
             <img src="./resourses/img/city_behind.png" alt="" />
         </div>
         <div id="parallax__layer__5" class="parallax__layer parallax__layer__5">
-            <img src="./resourses/img/citycenter.png" alt="" />
+            <img src="./resourses/img/citycenter.svg" alt="" />
         </div>
         <div id="parallax__layer__6" class="parallax__layer parallax__layer__6">
-            <img src="./resourses/img/city_front.png" alt="" />
+            <img src="./resourses/img/city_front1.svg" alt="" />
         </div>
-        <div id="parallax__layer__7" class="parallax__layer parallax__layer__7">
-            <img src="./resourses/img/blds.svg" alt="" />
+        <div id="parallax__layer__7" class="parallax__layer parallax__layer__7 interactive">
+            <img src="./resourses/img/interactive/city_front2.svg" alt="" />
         </div>
-        <div id="parallax__layer__ground1" class="parallax__layer parallax__layer__ground1">
+        <div id="parallax__layer__8" class="parallax__layer parallax__layer__8 interactive">
+            <img src="./resourses/img/interactive/blds.svg" alt="" />
+        </div>
+        <div id="parallax__layer__ground1" class="parallax__layer parallax__layer__ground1 interactive">
             <div id="floor1"></div>
         </div>
-        <div id="parallax__layer__ground2" class="parallax__layer parallax__layer__ground2">
+        <div id="parallax__layer__ground2" class="parallax__layer parallax__layer__ground2 interactive">
             <div id="floor2"></div>
         </div>
-        <div id="parallax__layer__ground3" class="parallax__layer parallax__layer__ground3">
+        <div id="parallax__layer__ground3" class="parallax__layer parallax__layer__ground3 interactive">
             <div id="floor3"></div>
         </div>
-        <div id="parallax__layer__ground4" class="parallax__layer parallax__layer__ground4">
+        <div id="parallax__layer__ground4" class="parallax__layer parallax__layer__ground4 interactive">
             <div id="floor4"></div>
         </div>
 
         <!--3D-->
-        <div id="bld_nxs"></div>
+        <div id="bld_nxs" class="interactive"></div>
         <!-- -->
     </div>
 
-    <div id="trigger"></div>
+    <div id="trigger" class="interactive"></div>
 
 </body>
-
-<script src="./js/sky.js"></script>
 
 <!--3D-->
 <script src="./js/three.min.js"></script>
 <script src="./js/GLTFLoader.js"></script>
 <script src="./js/3D_index.js"></script>
+<!---->
+
+<!-- sky -->
+<script src="./js/sky.js"></script>
 <!---->
 
 </html>

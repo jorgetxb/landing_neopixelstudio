@@ -6,9 +6,14 @@
     display: none;
 }
 
+a {
+    font-family: "Roboto", sans-serif;
+}
+
 body {
     background-color: #000;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
+    overflow: hidden;
     margin: 0;
     padding: 0;
 }
@@ -36,10 +41,97 @@ body {
     margin: auto;
 }
 
+
+/**************************/
+
+a {
+    text-decoration: underline;
+    color: white;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.button {
+    padding: 10px;
+    margin-bottom: 10vh;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    transition: background-color 2s;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 1080px) {
+    .button {
+        font-size: 3rem;
+    }
+}
+
+.button:hover {
+    background-color: white;
+}
+
+#button_beta {
+    position: flex;
+    flex-direction: column;
+}
+
+.info_beta {
+    position: absolute;
+    color: white;
+    font-size: 0.75rem;
+    margin-top: 50px;
+    text-align: center;
+}
+
+@media only screen and (min-width: 1080px) {
+    .info_beta {
+        font-size: 1rem;
+        margin-top: 75px;
+    }
+}
+
+.choose {
+    position: absolute;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    justify-content: space-around;
+    align-items: end;
+    z-index: 10;
+    max-width: 30vw;
+}
+
+.mouse_svg {
+    position: absolute;
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto auto 10vh auto;
+    justify-content: space-around;
+    align-items: end;
+    z-index: 10;
+    max-width: 30vw;
+    max-height: 20vh;
+    opacity: 1;
+    overflow: hidden;
+}
+
+
+/**************************/
+
 #parallax {
     perspective: 100px;
     height: 100vh;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
+    overflow: hidden;
     position: relative;
     top: 0;
     right: 0;
@@ -70,7 +162,7 @@ body {
     transform: translateZ(-450px) scale(5.5);
     animation: show 3s 2s forwards;
     opacity: 0;
-    top: 150vh;
+    top: 100vh;
 }
 
 .parallax_layer_logo img {
@@ -107,19 +199,27 @@ body {
 }
 
 .parallax__layer__5 {
-    transform: translateZ(-150px) scale(2.5);
+    transform: translateZ(-150px) scale(3.5);
     top: 375vh;
 }
 
 .parallax__layer__6 {
-    transform: translateZ(-100px) scale(2);
+    transform: translateZ(-100px) scale(3);
     top: 375vh;
 }
 
 .parallax__layer__7 {
+    transform: translateZ(-50px) scale(3);
+    top: 370vh;
+}
+
+.classic {
+    display: none;
+}
+
+.parallax__layer__8 {
     transform: translateZ(0px) scale(3.5);
-    /*2.5*/
-    top: 350vh;
+    top: 345vh;
     z-index: 1;
 }
 
@@ -133,7 +233,7 @@ body {
 }
 
 #floor1 {
-    background-image: url("../resourses/img/road1.svg");
+    background-image: url("../resourses/img/interactive/road1.svg");
     width: 100vw;
     height: 15vh;
     background-position: center;
@@ -152,7 +252,7 @@ body {
 }
 
 #floor2 {
-    background-image: url("../resourses/img/road2.svg");
+    background-image: url("../resourses/img/interactive/road2.svg");
     width: 100vw;
     height: 20vh;
     background-position: center;
@@ -171,7 +271,7 @@ body {
 }
 
 #floor3 {
-    background-image: url("../resourses/img/road1.svg");
+    background-image: url("../resourses/img/interactive/road1.svg");
     width: 100vw;
     height: 20vh;
     background-position: center;
@@ -190,7 +290,7 @@ body {
 }
 
 #floor4 {
-    background-image: url("../resourses/img/road3.svg");
+    background-image: url("../resourses/img/interactive/road3.svg");
     width: 100vw;
     height: 10vh;
     background-position: center;
