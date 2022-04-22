@@ -1,13 +1,5 @@
-//Back to the start
-window.scrollTo(0, 0);
-
-//loader page
-setTimeout(function() {
-    document.querySelector(".loader").style.display = 'none';
-}, 2000);
-
 //Activate Interactive Option
-document.getElementById("classic").addEventListener("click", function() {
+document.getElementById("classic_button").addEventListener("click", function() {
     var interactive_elems = document.getElementsByClassName("interactive");
     for (var i = 0; i < interactive_elems.length; i++) {
         interactive_elems[i].style.display = "none";
@@ -18,14 +10,15 @@ document.getElementById("classic").addEventListener("click", function() {
 //Unblock page and effects
 function unlock() {
 
-    var time_effect = 4000;
-    //Artifice to properly work on the web recharge
-    setTimeout(function() { document.getElementById("trigger").style.display = "block"; }, time_effect);
+    var time_effect = 3000;
 
-    document.body.style.overflowX = "hidden";
-    document.body.style.overflowY = "auto";
-    document.getElementById("parallax").style.overflowX = "hidden";
-    document.getElementById("parallax").style.overflowY = "auto";
+    document.getElementById("trigger").style.display = "block";
+
+    //Artifice to properly work on the web recharge
+    /*setTimeout(function() { document.getElementById("trigger").style.display = "block"; }, time_effect);*/
+
+    document.getElementById("parallax").style.overflowY = "scroll";
+
 
     $(".choose").animate({
         opacity: "0",
@@ -109,7 +102,7 @@ function render() {
     /*Breakpoint*/
     const b = 0;
 
-    if (window.pageYOffset > 0) {
+    if (window.pageYOffset > 0 && document.getElementById("classic").style.display == "none") {
         camera.position.y = cam_height_init - (window.pageYOffset * speed_height_change);
         cam_angle += (window.pageYOffset * speed_angle_change);
         camera.rotation.set(cam_angle, 0, 0);
@@ -117,6 +110,7 @@ function render() {
         transformValue = 'scale(' + scrolled + ')';
         container.style.transform = transformValue;
         $("html, body").animate({ scrollTop: $('#trigger').offset().top }, 4500);
+        //Animation align landscape
         $("#parallax__layer__1").animate({ top: "500vh" }, 1000);
         $("#parallax__layer__2").animate({ top: "475vh" }, 1000);
         $("#parallax__layer__3").animate({ top: "475vh" }, 1000);
@@ -140,10 +134,7 @@ function render() {
             camera.rotation.set(-0.02, 0, 0);
             camera.position.y = 600;
             document.getElementById("parallax").style.overflowY = "hidden";
-            var body = document.getElementsByTagName("body"); //*
-            for (var i = 0; i < body.length; i++) {
-                body[i].style.overflowY = "hidden";
-            };
+            document.body.style.overflowY = "hidden";
         }
     } else {
         camera.rotation.set(cam_angle_init, 0, 0);

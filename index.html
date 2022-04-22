@@ -8,10 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./CSS/style_index.css" />
     <link rel="stylesheet" href="./CSS/sky.css" />
+    <link rel="stylesheet" href="./CSS/classic.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <title>Neo Pixel Studio</title>
-
+    <script src="./js/start.js"></script>
 </head>
 
 <body>
@@ -20,9 +21,9 @@
     </div>
 
     <div class="choose">
-        <div onclick="unlock()" id="classic" class="button"> <a>Clásico</a> </div>
-        <div onclick="unlock()" id="interactive">
-            <div class="info_beta">(Beta, Iphone/Safari not supported)</div>
+        <div onclick="unlock()" id="classic_button" class="button"> <a>Clásico</a> </div>
+        <div onclick="unlock()" id="interactive_button">
+            <div class="info_beta">(Beta_Safari_not_supported)</div>
             <div class="button"> <a>Interactivo</a> </div>
         </div>
     </div>
@@ -78,10 +79,26 @@
         <!--3D-->
         <div id="bld_nxs" class="interactive"></div>
         <!-- -->
+
+        <div id="classic">
+            <div id="about_us">
+                <div class="title">
+                    <h1>Bienvenidos</h1>
+                </div>
+                <div class="content">
+                    <div class="text">
+                        <div class="subtitle">¡Somos Neo Pixel Studio!</div>
+                        <div class="paragraph">Estamos aquí para brindarte el mejor servicio de desarrollo de páginas web. Además del desarrollo, te brindamos asesoría en el manejo de tu marca, para que todo aquello que desees promocionar al mundo lo hagas de una manera ¡espectacular!.</div>
+                    </div>
+                    <div id="lottie_presentation">
+                        <lottie-player src="./resourses/img/classic/man-working.json" background="transparent" speed="1.5" loop autoplay></lottie-player>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="trigger" class="interactive"></div>
-
 </body>
 
 <!--3D-->

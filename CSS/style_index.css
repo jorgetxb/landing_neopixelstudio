@@ -12,8 +12,7 @@ a {
 
 body {
     background-color: #000;
-    /* overflow-x: hidden; */
-    overflow: hidden;
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
 }
@@ -103,8 +102,8 @@ a:hover {
     margin: auto;
     justify-content: space-around;
     align-items: end;
-    z-index: 10;
-    max-width: 30vw;
+    z-index: 4;
+    width: 0vw;
 }
 
 .mouse_svg {
@@ -117,7 +116,7 @@ a:hover {
     margin: auto auto 10vh auto;
     justify-content: space-around;
     align-items: end;
-    z-index: 10;
+    z-index: 4;
     max-width: 30vw;
     max-height: 20vh;
     opacity: 1;
@@ -130,8 +129,8 @@ a:hover {
 #parallax {
     perspective: 100px;
     height: 100vh;
-    /* overflow-x: hidden; */
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
     position: relative;
     top: 0;
     right: 0;
@@ -213,7 +212,7 @@ a:hover {
     top: 370vh;
 }
 
-.classic {
+#classic {
     display: none;
 }
 
