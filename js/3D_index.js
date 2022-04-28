@@ -86,7 +86,7 @@ scene.add(light);
 const ambient = new THREE.AmbientLight(0xFFFFFF, 0.75);
 scene.add(ambient);
 
-/***Height, Angle, Zoom (Perspective)***/
+/***Animation Height, Angle, Zoom***/
 
 // Render
 function render() {
@@ -102,7 +102,8 @@ function render() {
     /*Breakpoint*/
     const b = 0;
 
-    if (window.pageYOffset > 0 && document.getElementById("classic").style.display == "none") {
+    if (window.pageYOffset > 0 && $('#classic:visible').length == 0) {
+        document.getElementById('enter').style.display = 'block';
         camera.position.y = cam_height_init - (window.pageYOffset * speed_height_change);
         cam_angle += (window.pageYOffset * speed_angle_change);
         camera.rotation.set(cam_angle, 0, 0);
@@ -163,3 +164,7 @@ function onWindowResize() {
 
     render();
 }
+
+document.getElementById('enter').addEventListener('click', function() {
+    location.href = 'http://3d.neopixel.studio/office.html'
+});

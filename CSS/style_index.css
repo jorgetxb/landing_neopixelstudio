@@ -8,6 +8,13 @@
 
 a {
     font-family: "Roboto", sans-serif;
+    text-decoration: underline;
+    color: white;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
 }
 
 body {
@@ -15,6 +22,11 @@ body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+}
+
+p {
+    font-family: 'roboto', sans-serif;
+    font-size: 1rem;
 }
 
 .loader {
@@ -42,16 +54,6 @@ body {
 
 
 /**************************/
-
-a {
-    text-decoration: underline;
-    color: white;
-}
-
-a:hover {
-    color: black;
-    text-decoration: none;
-}
 
 .button {
     padding: 10px;
@@ -212,10 +214,6 @@ a:hover {
     top: 370vh;
 }
 
-#classic {
-    display: none;
-}
-
 .parallax__layer__8 {
     transform: translateZ(0px) scale(3.5);
     top: 345vh;
@@ -253,7 +251,7 @@ a:hover {
 #floor2 {
     background-image: url("../resourses/img/interactive/road2.svg");
     width: 100vw;
-    height: 20vh;
+    height: 22vh;
     background-position: center;
     background-repeat: repeat;
     background-size: 20vh;
@@ -320,4 +318,101 @@ a:hover {
     display: none;
     height: 250px;
     width: 100vw;
+}
+
+#footer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#enter {
+    display: none;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-image: url('../resourses/img/interactive/enter.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+#logo {
+    background-image: url('../resourses/img/logo.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 150px;
+    height: 150px;
+}
+
+#mail {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 250px;
+}
+
+#mail #icon {
+    background-image: url('../resourses/img/mail.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+#mail #text,
+#numero #text,
+#copyright {
+    color: white;
+}
+
+#numero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 150px;
+}
+
+#numero #icon {
+    background-image: url('../resourses/img/whatsapp.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+#copyright p {
+    font-size: 0.75rem;
 }

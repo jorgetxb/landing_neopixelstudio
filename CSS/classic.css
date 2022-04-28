@@ -6,6 +6,7 @@ h1 {
 }
 
 #classic {
+    display: none;
     position: relative;
     background-color: #0b0c12;
     z-index: 3;
