@@ -9,6 +9,19 @@
     <link rel="stylesheet" href="./CSS/style_index.css" />
     <link rel="stylesheet" href="./CSS/sky.css" />
     <link rel="stylesheet" href="./CSS/classic.css" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-211458541-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-211458541-1');
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <title>Neo Pixel Studio</title>
@@ -22,7 +35,8 @@
 
     <div class="choose">
         <div onclick="unlock()" id="classic_button" class="button"> <a>Clásico</a> </div>
-        <div onclick="unlock()" id="interactive_button">
+
+        <div onclick="unlock(), trigger()" id="interactive_button">
             <div class="info_beta">(Beta_Safari_not_supported)</div>
             <div class="button"> <a>Interactivo</a> </div>
         </div>
@@ -57,8 +71,8 @@
         <div id="parallax__layer__6" class="parallax__layer parallax__layer__6">
             <img src="./resourses/img/city_front1.svg" alt="" />
         </div>
-        <div id="parallax__layer__7" class="parallax__layer parallax__layer__7 interactive">
-            <img src="./resourses/img/interactive/city_front2.svg" alt="" />
+        <div id="parallax__layer__7" class="parallax__layer parallax__layer__7">
+            <img src="./resourses/img/city_front2.svg" alt="" />
         </div>
         <div id="parallax__layer__8" class="parallax__layer parallax__layer__8 interactive">
             <img src="./resourses/img/interactive/blds.svg" alt="" />
@@ -81,45 +95,207 @@
         <!-- -->
 
         <div id="classic">
-            <div id="about_us">
+
+            <!-- section1 -->
+            <div id="about_us" class="section-b">
                 <div class="title">
                     <h1>Bienvenidos</h1>
                 </div>
                 <div class="content">
                     <div class="text">
-                        <div class="subtitle">¡Somos Neo Pixel Studio!</div>
-                        <div class="paragraph">Estamos aquí para brindarte el mejor servicio de desarrollo de páginas web. Además del desarrollo, te brindamos asesoría en el manejo de tu marca, para que todo aquello que desees promocionar al mundo lo hagas de una manera ¡espectacular!.</div>
+                        <div class="subtitle">
+                            <h2>¡Somos Neo Pixel Studio!</h2>
+                        </div>
+                        <div class="paragraph">
+                            <p>Estamos aquí para brindarte el mejor servicio de desarrollo de páginas web, y manejo de redes sociales.
+                            </p>
+                            <p>Además, te brindamos asesoría en el manejo de tu marca, para que todo aquello que desees promocionar al mundo lo hagas de una manera ¡espectacular!.</p>
+                        </div>
                     </div>
                     <div id="lottie_presentation">
-                        <lottie-player src="./resourses/img/classic/man-working.json" background="transparent" speed="1.5" loop autoplay></lottie-player>
+                        <lottie-player src="./resourses/img/classic/web-design.json" background="transparent" speed="1.5" loop autoplay></lottie-player>
                     </div>
                 </div>
             </div>
+
+            <!-- section2 -->
+            <div class="step">
+                <div class="triangle">
+                    <img src="./resourses/img/classic/step_triangle1.svg" alt="">
+                </div>
+                <div id="promises" class="section-w">
+                    <div class="subtitle">
+                        <h1>¿Qué te ofrecemos?</h1>
+                    </div>
+                    <div class="content">
+                        <div class="service">
+                            <div class="lottie">
+                                <lottie-player src="./resourses/img/classic/offer/growing.json" background="transparent" speed="1.5" loop autoplay></lottie-player>
+                            </div>
+                            <h2>Impulso a tu negocio</h2>
+                            <p>Date a conocer sin barreras de tiempo o distancia, la mejor manera de hacerlo, ¡una página web!</p>
+                        </div>
+                        <div class="service">
+                            <div class="lottie">
+                                <lottie-player src="./resourses/img/classic/offer/design.json" background="transparent" speed="1.5" loop autoplay></lottie-player>
+                            </div>
+                            <h2>Diseño inovador</h2>
+                            <p>Te enorgullecerás de un diseño elegante y sofisticado que quedará grabado en la mente de tus clientes</p>
+                        </div>
+                        <div class="service">
+                            <div class="lottie">
+                                <lottie-player src="./resourses/img/classic/offer/ux.json" background="transparent" speed="1.5" loop autoplay></lottie-player>
+                            </div>
+                            <h2>Toda una experiencia</h2>
+                            <p>Brindarás una experiencia de usuario única que encantará a tus clientes</p>
+                        </div>
+                        <div class="service">
+                            <div class="lottie">
+                                <lottie-player src="./resourses/img/classic/offer/responsive.json" background="transparent" speed="1.5" loop autoplay></lottie-player>
+                            </div>
+                            <h2>Perfecto responsive</h2>
+                            <p>Contarás con adaptabilidad para un acceso universal, ya sea por un dispositivo móvil o de escritorio</p>
+                        </div>
+                    </div>
+                    <div class="space-w"></div>
+                </div>
+                <div class="triangle">
+                    <img src="./resourses/img/classic/step_triangle2.svg" alt="">
+                </div>
+            </div>
+
+            <!-- section3 -->
+            <div class="section-b desarrollo">
+                <div class="title">
+                    <h1>Desarrollo</h1>
+                </div>
+                <div class="subtitle">
+                    <h2>¡Cualquiera sea tu mercado! <br>Desde $300</h2>
+                </div>
+                <div class="subtitle2">
+                    <h3>Coméntanos tus requerimientos, nosotros los transformaremos en el mejor contenido visual para tus visitantes.</h3>
+                </div>
+                <div class="content">
+                    <a target="_blank" href="http://www.kelsimariep.com">
+                        <div class="sample" id="moda"></div>
+                    </a>
+                    <a target="_blank" href="http://samples.neopixel.studio/evento/index.php">
+                        <div class="sample" id="eventos"></div>
+                    </a>
+                    <a target="_blank" href="http://samples.neopixel.studio/blog_cafe/index.html">
+                        <div class="sample" id="blog"></div>
+                    </a>
+
+                    <a target="_blank" href="http://samples.neopixel.studio/real_estate/index.html">
+                        <div class="sample" id="raices"></div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="space-b"></div>
+
+            <!-- section4 -->
+            <div class="triangle">
+                <img src="./resourses/img/classic/step_triangle1.svg" alt="">
+            </div>
+            <div class="section-w marketing">
+                <div class="title">
+                    <h1>Marketing</h1>
+                </div>
+                <div class="subtitle">
+                    <h2>¡Manejo de tus redes sociales!<br>Desde $150</h2>
+                </div>
+                <div class="subtitle2">
+                    <h3>Te ayudamos desarrollar el mejor contenido para tus redes sociales con técnicas vanguardistas que capten la atención de tu público objetivo</h3>
+                </div>
+                <div class="content">
+                    <a target="_blank" href="https://www.instagram.com/blossom.fashiondesign/">
+                        <div class="sample" id="blossom"></div>
+                    </a>
+                    <a target="_blank" href="https://www.instagram.com/blossom.fashiondesign/">
+                        <div class="sample" id="blossom2"></div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="space-w"></div>
+            <div class="triangle">
+                <img src="./resourses/img/classic/step_triangle2.svg" alt="">
+            </div>
+
+            <!-- footer Clásico -->
+            <div class="footer">
+                <div class="logo-footer"></div>
+                <div class="mail">
+                    <div class="icon"></div>
+                    <div class="text">
+                        <p>staff@neopixel.studio</p>
+                    </div>
+                </div>
+                <div class="numero">
+                    <div class="icon"></div>
+                    <div class="text">
+                        <p>+593996639450</p>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>copyright © 2022 NeoPixelStudio</p>
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <div id="trigger" class="interactive">
+    <!-- footer Interactivo -->
+    <div id="trigger">
         <div id="enter" class="bounce">
         </div>
-        <div id="footer">
-            <div id="logo"></div>
-            <div id="mail">
-                <div id="icon"></div>
-                <div id="text">
-                    <p>neopixel.studio@outlook.com</p>
+        <div class="footer">
+            <div class="logo-footer"></div>
+            <div class="mail">
+                <div class="icon"></div>
+                <div class="text">
+                    <p>staff@neopixel.studio</p>
                 </div>
             </div>
-            <div id="numero">
-                <div id="icon"></div>
-                <div id="text">
-                    <p>+593996639451</p>
+            <div class="numero">
+                <div class="icon"></div>
+                <div class="text">
+                    <p>+593996639450</p>
                 </div>
             </div>
-            <div id="copyright">
+            <div class="copyright">
                 <p>copyright © 2022 NeoPixelStudio</p>
             </div>
         </div>
     </div>
+
+    <div id="whatsapp"></div>
+    <div id="whatsapp-open">
+        <div id="close_whatsapp">
+            <svg viewbox="0 0 20 20">
+          <path class="close" d="M 5,5 L 15,15 M 15,5 L 5,15" />
+        </svg>
+        </div>
+        <div id="w_head">
+            <div id="w_img"></div>
+            <div id="w_name"><b>Kelsi</b></div>
+            <div id="w_description">Contesta en alrededor de una hora</div>
+        </div>
+        <div id="container_text">
+            <div id="text">
+                <p>¡Hola!, ¡Qué gusto que estés aquí!</p>
+                <p>¿Cómo puedo ayudarte?</p>
+            </div>
+            <div id="submit">
+                <p>Presiona el botón para contactarnos</p>
+                <a href="https://api.whatsapp.com/send?phone=593996639450&text=%C2%A1Hola%21%2C+deseo+obtener+más+información+de+los+servicios+de+Neo+Pixel+Studio." target="_blank">
+                    <div id="send_message"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 <!--3D-->

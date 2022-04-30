@@ -6,4 +6,10 @@ window.onload = function() {
     setTimeout(function() {
         document.querySelector(".loader").style.display = 'none';
     }, 2000);
+
+    //Time to open whatsapp
+    setTimeout(function() {
+        document.querySelector("#whatsapp").style.display = 'block';
+    }, 15000);
+
 }

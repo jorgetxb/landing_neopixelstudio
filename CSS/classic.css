@@ -1,16 +1,54 @@
+:root {
+    --background: #0b0c12;
+}
+
 h1 {
-    color: white;
+    font-family: sans-serif;
+    font-size: 4rem;
+    margin-top: 75px;
+    text-align: center;
+}
+
+h2 {
     font-family: sans-serif;
     font-size: 3rem;
-    margin-top: 75px;
+    text-align: center;
+}
+
+h3 {
+    font-family: sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 100;
+    color: white;
+}
+
+p {
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    line-height: 50px;
+}
+
+.section-b h1,
+.section-b h2,
+.section-b h3,
+.section-b p {
+    color: white;
+}
+
+.section-w h1,
+.section-w h2,
+.section-w h3,
+.section-w p {
+    color: var(--background);
 }
 
 #classic {
     display: none;
     position: relative;
-    background-color: #0b0c12;
+    background-color: var(--background);
     z-index: 3;
-    margin-top: 320vh;
+    margin-top: 335vh;
 }
 
 .title {
@@ -20,13 +58,335 @@ h1 {
     text-align: center;
 }
 
+.subtitle {
+    padding: 25px;
+}
+
 .content {
-    /* display: grid;
-    grid-template-columns: 50% 50%; */
-    display: flex;
-    max-width: 750px;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1080px;
     margin: auto;
     align-items: center;
 }
 
-.lottie_presentation {}
+@media (orientation: portrait) {
+    .content {
+        grid-template-columns: auto;
+    }
+}
+
+.step {
+    width: 100vw;
+    height: auto;
+    background-color: var(--background);
+}
+
+.triangle {
+    width: 100%;
+    height: 100%;
+    margin-bottom: -5px;
+}
+
+#promises {
+    background-color: white;
+}
+
+#promises .content {
+    align-items: baseline;
+}
+
+#promises p {
+    text-align: center;
+}
+
+.lottie {
+    height: 50vh;
+    margin: auto;
+}
+
+.space-w {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+}
+
+.subtitle2 {
+    text-align: center;
+    margin: auto;
+    max-width: 768px;
+}
+
+.marketing {
+    background-color: white;
+}
+
+#moda {
+    background-image: url('../resourses/img/portfolio/kelsimariep.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 95vh;
+    width: 100%;
+    max-width: 75vw;
+    margin: auto;
+    border-radius: 25px;
+}
+
+#eventos {
+    background-image: url('../resourses/img/portfolio/evento.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 85vh;
+    width: 100%;
+    max-width: 75vw;
+    margin: auto;
+    border-radius: 25px;
+}
+
+#blog {
+    background-image: url('../resourses/img/portfolio/blog_cafe.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+    width: 100%;
+    max-width: 75vw;
+    margin: auto;
+    border-radius: 25px;
+}
+
+#raices {
+    background-image: url('../resourses/img/portfolio/real_estate.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+    width: 100%;
+    max-width: 75vw;
+    margin: auto;
+    border-radius: 25px;
+}
+
+.sample {
+    transition: 1s;
+}
+
+.sample:hover {
+    transform: scale(1.1);
+    box-shadow: 10px 10px 15px #333;
+}
+
+.space-b {
+    width: 100%;
+    height: 100px;
+    background-color: var(--background);
+}
+
+#blossom {
+    background-image: url('../resourses/img/portfolio/blossom1-instagram.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 195vh;
+    width: 100%;
+    max-width: 75vw;
+    margin: auto;
+    border-radius: 25px;
+    border: solid 3px #fe99b7;
+}
+
+#blossom2 {
+    background-image: url('../resourses/img/portfolio/blossom2-instagram.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 150vh;
+    width: 100%;
+    max-width: 75vw;
+    margin: auto;
+    border-radius: 25px;
+    border: solid 3px #bc2a42;
+}
+
+#whatsapp {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 20px;
+    background-color: black;
+    background-image: url('../resourses/img/whatsapp.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 75%;
+    height: 85px;
+    width: 85px;
+    border-radius: 50%;
+    cursor: pointer;
+    animation: turn 3s infinite;
+}
+
+@keyframes turn {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(15deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+#whatsapp-open {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    max-height: 500px;
+    max-width: 500px;
+    width: 90%;
+    background-color: #095e54;
+    position: absolute;
+    border-radius: 25px;
+    box-shadow: 10px 10px 20px black;
+    bottom: 0;
+    left: 0;
+    margin: 20px;
+}
+
+@media (orientation: portrait) {
+    #whatsapp-open {
+        top: 25%;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+#close_whatsapp {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 100%;
+    margin-left: 100%;
+    margin-top: -5%;
+    cursor: pointer;
+}
+
+.close {
+    stroke: black;
+    stroke-width: 2;
+}
+
+#w_head {
+    height: 20%;
+    width: 75%;
+    padding: 5%;
+    display: grid;
+    grid-column-gap: 10%;
+    grid-template-columns: 20% auto;
+    align-items: center;
+    justify-content: left;
+}
+
+#w_img {
+    grid-area: 1 / 1 / 3 / 2;
+    background-image: url('../resourses/img/contacto/kelsi.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 75px;
+    width: 75px;
+    border-radius: 100%;
+}
+
+#w_name {
+    color: white;
+    font-family: "Roboto", "sans-serif";
+    font-size: 1.5rem;
+}
+
+#w_description {
+    color: white;
+    font-family: "Roboto", "sans-serif";
+    font-size: 0.75rem;
+}
+
+#container_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../resourses/img/contacto/w_bg.svg');
+    width: 100%;
+    height: 75%;
+    border-radius: 0 0 25px 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#text {
+    background-color: white;
+    width: 75%;
+    height: auto;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+#text p {
+    letter-spacing: unset;
+}
+
+#submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    width: 80%;
+    height: auto;
+    padding: 0 1rem;
+    border-radius: 50px;
+    margin: 20px;
+}
+
+#submit p {
+    letter-spacing: unset;
+    color: grey;
+    font-size: 0.75rem;
+}
+
+#send_message {
+    width: 50px;
+    height: 50px;
+    background-image: url('../resourses/img/contacto/send_message.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: white;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+    animation: bounce2 1s infinite;
+}
+
+@keyframes bounce2 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+        filter: drop-shadow(3px 3px 3px #333);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

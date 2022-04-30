@@ -27,6 +27,7 @@ body {
 p {
     font-family: 'roboto', sans-serif;
     font-size: 1rem;
+    margin: 0;
 }
 
 .loader {
@@ -56,7 +57,7 @@ p {
 /**************************/
 
 .button {
-    padding: 10px;
+    padding: 0 30px;
     margin-bottom: 10vh;
     font-size: 1.5rem;
     border-radius: 5px;
@@ -83,14 +84,15 @@ p {
     position: absolute;
     color: white;
     font-size: 0.75rem;
-    margin-top: 50px;
     text-align: center;
+    padding: 0 30px;
+    margin-top: 35px;
 }
 
 @media only screen and (min-width: 1080px) {
     .info_beta {
         font-size: 1rem;
-        margin-top: 75px;
+        margin-top: 50px;
     }
 }
 
@@ -161,16 +163,16 @@ p {
 
 .parallax_layer_logo {
     transform: translateZ(-450px) scale(5.5);
-    animation: show 3s 2s forwards;
     opacity: 0;
     top: 100vh;
+    animation: appear 3s 2s forwards;
 }
 
 .parallax_layer_logo img {
     max-height: 50%;
 }
 
-@keyframes show {
+@keyframes appear {
     0% {
         opacity: 0;
     }
@@ -251,7 +253,7 @@ p {
 #floor2 {
     background-image: url("../resourses/img/interactive/road2.svg");
     width: 100vw;
-    height: 22vh;
+    height: 20vh;
     background-position: center;
     background-repeat: repeat;
     background-size: 20vh;
@@ -320,7 +322,7 @@ p {
     width: 100vw;
 }
 
-#footer {
+.footer {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -366,7 +368,7 @@ p {
     }
 }
 
-#logo {
+.logo-footer {
     background-image: url('../resourses/img/logo.png');
     background-position: center center;
     background-repeat: no-repeat;
@@ -375,44 +377,44 @@ p {
     height: 150px;
 }
 
-#mail {
+.mail {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 250px;
 }
 
-#mail #icon {
+.mail .icon {
     background-image: url('../resourses/img/mail.svg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
     width: 30px;
     height: 30px;
+    margin-right: 15px;
 }
 
-#mail #text,
-#numero #text,
-#copyright {
+.mail .text,
+.numero .text,
+.copyright {
     color: white;
 }
 
-#numero {
+.numero {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 150px;
 }
 
-#numero #icon {
+.numero .icon {
     background-image: url('../resourses/img/whatsapp.svg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
     width: 30px;
     height: 30px;
+    margin-right: 15px;
 }
 
-#copyright p {
+.copyright p {
     font-size: 0.75rem;
 }

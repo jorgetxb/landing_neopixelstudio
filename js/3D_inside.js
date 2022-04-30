@@ -13,38 +13,38 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 //Shadow Resolution
 var shadow_resolution;
 
-if ( window.innerWidth <= 720 ) {
-  shadow_resolution = 0
+if (window.innerWidth <= 720) {
+    shadow_resolution = 0
 } else {
-  shadow_resolution = 720;
+    shadow_resolution = 720;
     //Main Spot Light
 
-  var spotLight = new THREE.SpotLight( 0xaaaaff, 15 );
-  spotLight.position.set( 0, 650, 250 );//Lf-Rg, H, Fw-Bc
-  //spotLight.angle = 0.1;
-  spotLight.penumbra = 0.25;
-  spotLight.decay = 1.25;
-  spotLight.distance = 1000;
+    var spotLight = new THREE.SpotLight(0xaaaaff, 15);
+    spotLight.position.set(0, 650, 250); //Lf-Rg, H, Fw-Bc
+    //spotLight.angle = 0.1;
+    spotLight.penumbra = 0.25;
+    spotLight.decay = 1.25;
+    spotLight.distance = 1000;
 
-  spotLight.castShadow = true;
-  spotLight.shadow.radius = 3; //shadow border
-  spotLight.shadow.mapSize.width = shadow_resolution; //Shadow resolution X
-  spotLight.shadow.mapSize.height = shadow_resolution; //Shadow resolution Y
-  scene.add( spotLight );
+    spotLight.castShadow = true;
+    spotLight.shadow.radius = 3; //shadow border
+    spotLight.shadow.mapSize.width = shadow_resolution; //Shadow resolution X
+    spotLight.shadow.mapSize.height = shadow_resolution; //Shadow resolution Y
+    scene.add(spotLight);
 };
 
 
 var rend_res = 1;
-if ( window.innerWidth <= 1280 ) {
-  if ( window.innerWidth <= 640 ) {
-    rend_res = 3;
-  } else {
-    rend_res = 2;
-  }
+if (window.innerWidth <= 1280) {
+    if (window.innerWidth <= 640) {
+        rend_res = 3;
+    } else {
+        rend_res = 2;
+    }
 } else {
-  rend_res = 1.5;
+    rend_res = 1.5;
 };
-renderer.setPixelRatio(window.devicePixelRatio/rend_res); //Resolution
+renderer.setPixelRatio(window.devicePixelRatio / rend_res); //Resolution
 container.appendChild(renderer.domElement);
 
 /////////////////////////////////////
@@ -72,7 +72,7 @@ let controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.target.set(0, 200, 192); //0, 200, 192
 controls.update();
 
-  //Range Control Limits
+//Range Control Limits
 
 controls.maxDistance = 300; //500
 controls.minDistance = 100; //100
@@ -82,32 +82,32 @@ controls.minPolarAngle = 1.3; //1.3
 
 controls.maxZoom = 1;
 
-  //Available Options
+//Available Options
 controls.enableZoom = true;
 controls.enablePan = false; //true
 controls.screenSpacePanning = false;
 //controls.enableDamping = true;
 
-  //Select Control Keys
+//Select Control Keys
 
-    //PC
+//PC
 controls.listenToKeyEvents(document.body);
 controls.keys = {
-  LEFT: "ArrowLeft",
-  UP: "ArrowUp",
-  RIGHT: "ArrowRight",
-  BOTTOM: "ArrowDown",
+    LEFT: "ArrowLeft",
+    UP: "ArrowUp",
+    RIGHT: "ArrowRight",
+    BOTTOM: "ArrowDown",
 };
 
-    //Phones
+//Phones
 controls.touches = {
-  ONE: THREE.TOUCH.ROTATE,
-  TWO: THREE.TOUCH.DOLLY_PAN,
+    ONE: THREE.TOUCH.ROTATE,
+    TWO: THREE.TOUCH.DOLLY_PAN,
 };
 
-    //Config Controls
-controls.keyPanSpeed = 35;  //35
-controls.rotateSpeed = -1;  //-1
+//Config Controls
+controls.keyPanSpeed = 35; //35
+controls.rotateSpeed = -1; //-1
 
 /***Loader Stage***/
 
@@ -121,9 +121,9 @@ manager.onStart = function ( url, itemsLoaded, itemsTotal ) {
 };
 */
 
-manager.onLoad = function ( ) {
-  document.getElementById('loader3d').style.display = "none";
-	console.log( 'Loading complete!');
+manager.onLoad = function() {
+    document.getElementById('loader3d').style.display = "none";
+    console.log('Loading complete!');
 };
 
 
@@ -144,147 +144,147 @@ manager.onError = function ( url ) {
 /***Loader***/
 
 let loader = new THREE.GLTFLoader(manager);
-loader.load("../resourses/3D/scene.gltf", function (gltf) {
-  //Shadows Activate
-  gltf.scene.traverse( function ( child ) {
-    if ( child.isMesh ) {
-        child.castShadow = true;
-        child.receiveShadow = true;
-    }
-  } );
-  //
-  scene.add(gltf.scene);
-  renderer.render(scene, camera);
+loader.load("../resourses/3D/scene.gltf", function(gltf) {
+    //Shadows Activate
+    gltf.scene.traverse(function(child) {
+        if (child.isMesh) {
+            child.castShadow = true;
+            child.receiveShadow = true;
+        }
+    });
+    //
+    scene.add(gltf.scene);
+    renderer.render(scene, camera);
 });
 
 
-  //Portfolio Icon
+//Portfolio Icon
 
 let loader4 = new THREE.GLTFLoader();
-loader4.load("../resourses/3D/portfolio.gltf", function (gltf4) {
-  //
-  gltf4.scene.scale.set(35,35,35);
-  gltf4.scene.position.z = -142; //Frente-Atras
-  gltf4.scene.position.y = 275; //altura
-  gltf4.scene.position.x = 429; //Derecha-Izquierda
-  gltf4.scene.rotation.z = 1.6;
-  gltf4.scene.rotation.y = 0.75;
-    
-  var animate4 = function () {
-    gltf4.scene.rotation.y += 0.012;
+loader4.load("../resourses/3D/portfolio.gltf", function(gltf4) {
+    //
+    gltf4.scene.scale.set(35, 35, 35);
+    gltf4.scene.position.z = -142; //Frente-Atras
+    gltf4.scene.position.y = 275; //altura
+    gltf4.scene.position.x = 429; //Derecha-Izquierda
+    gltf4.scene.rotation.z = 1.6;
+    gltf4.scene.rotation.y = 0.75;
+
+    var animate4 = function() {
+        gltf4.scene.rotation.y += 0.012;
+        renderer.render(scene, camera);
+        requestAnimationFrame(animate4);
+    };
+
+    animate4();
+
+    scene.add(gltf4.scene);
     renderer.render(scene, camera);
-    requestAnimationFrame(animate4);
-  };
-      
-  animate4();
-    
-  scene.add(gltf4.scene);
-  renderer.render(scene, camera);
 });
 
 
-  //Design Icon
+//Design Icon
 
 let loader5 = new THREE.GLTFLoader();
-loader5.load("../resourses/3D/dev.gltf", function (gltf5) {
-  //
-  gltf5.scene.scale.set(35,35,35);
-  gltf5.scene.position.z = 118; //Frente-Atras
-  gltf5.scene.position.y = 275; //altura
-  gltf5.scene.position.x = 440; //Derecha-Izquierda
-  gltf5.scene.rotation.z = 1.6;
-  
-  var animate5 = function () {
-    gltf5.scene.rotation.y -= 0.012;
+loader5.load("../resourses/3D/dev.gltf", function(gltf5) {
+    //
+    gltf5.scene.scale.set(35, 35, 35);
+    gltf5.scene.position.z = 118; //Frente-Atras
+    gltf5.scene.position.y = 275; //altura
+    gltf5.scene.position.x = 440; //Derecha-Izquierda
+    gltf5.scene.rotation.z = 1.6;
+
+    var animate5 = function() {
+        gltf5.scene.rotation.y -= 0.012;
+        renderer.render(scene, camera);
+        requestAnimationFrame(animate5);
+    };
+
+    animate5();
+
+    scene.add(gltf5.scene);
     renderer.render(scene, camera);
-    requestAnimationFrame(animate5);
-  };
-    
-  animate5();
-  
-  scene.add(gltf5.scene);
-  renderer.render(scene, camera);
 });
 
 
-  //Grow Icon
+//Grow Icon
 
 let loader6 = new THREE.GLTFLoader();
-loader6.load("../resourses/3D/grow.gltf", function (gltf6) {
-  //
-  gltf6.scene.scale.set(35,35,35);
-  gltf6.scene.position.z = 356; //Frente-Atras
-  gltf6.scene.position.y = 275; //altura
-  gltf6.scene.position.x = 440; //Derecha-Izquierda
-  gltf6.scene.rotation.z = 1.6;
-  
-  var animate6 = function () {
-    gltf6.scene.rotation.y += 0.012;
+loader6.load("../resourses/3D/grow.gltf", function(gltf6) {
+    //
+    gltf6.scene.scale.set(35, 35, 35);
+    gltf6.scene.position.z = 356; //Frente-Atras
+    gltf6.scene.position.y = 275; //altura
+    gltf6.scene.position.x = 440; //Derecha-Izquierda
+    gltf6.scene.rotation.z = 1.6;
+
+    var animate6 = function() {
+        gltf6.scene.rotation.y += 0.012;
+        renderer.render(scene, camera);
+        requestAnimationFrame(animate6);
+    };
+
+    animate6();
+
+    scene.add(gltf6.scene);
     renderer.render(scene, camera);
-    requestAnimationFrame(animate6);
-  };
-    
-  animate6();
-  
-  scene.add(gltf6.scene);
-  renderer.render(scene, camera);
 });
 
-  //Whatsapp Icon
+//Whatsapp Icon
 
 let loader2 = new THREE.GLTFLoader();
-loader2.load("../resourses/3D/comunication.gltf", function (gltf2) {
-  //
-  gltf2.scene.scale.set(35,35,35);
-  gltf2.scene.position.z = 12; //Frente-Atras
-  gltf2.scene.position.y = 275; //altura
-  gltf2.scene.position.x = -419; //Derecha-Izquierda
-  gltf2.scene.rotation.z = 1.6;
-  gltf2.scene.rotation.y = -0.75;
+loader2.load("../resourses/3D/comunication.gltf", function(gltf2) {
+    //
+    gltf2.scene.scale.set(35, 35, 35);
+    gltf2.scene.position.z = 12; //Frente-Atras
+    gltf2.scene.position.y = 275; //altura
+    gltf2.scene.position.x = -419; //Derecha-Izquierda
+    gltf2.scene.rotation.z = 1.6;
+    gltf2.scene.rotation.y = -0.75;
 
-  var animate2 = function () {
-    gltf2.scene.rotation.y -= 0.012;
+    var animate2 = function() {
+        gltf2.scene.rotation.y -= 0.012;
+        renderer.render(scene, camera);
+        requestAnimationFrame(animate2);
+    };
+
+    animate2();
+
+    scene.add(gltf2.scene);
     renderer.render(scene, camera);
-    requestAnimationFrame(animate2);
-  };
-  
-  animate2();
-
-  scene.add(gltf2.scene);
-  renderer.render(scene, camera);
 });
 
-  //Us Icon
+//Us Icon
 
 let loader3 = new THREE.GLTFLoader();
-loader3.load("../resourses/3D/about_us.gltf", function (gltf3) {
+loader3.load("../resourses/3D/about_us.gltf", function(gltf3) {
 
-  gltf3.scene.scale.set(35,35,35);
-  gltf3.scene.position.z = 352; //Frente-Atras
-  gltf3.scene.position.y = 275; //altura
-  gltf3.scene.position.x = -438; //Derecha-Izquierda
-  gltf3.scene.rotation.z = 1.6;
-  
-  var animate3 = function () {
-    gltf3.scene.rotation.y += 0.012;
+    gltf3.scene.scale.set(35, 35, 35);
+    gltf3.scene.position.z = 352; //Frente-Atras
+    gltf3.scene.position.y = 275; //altura
+    gltf3.scene.position.x = -438; //Derecha-Izquierda
+    gltf3.scene.rotation.z = 1.6;
+
+    var animate3 = function() {
+        gltf3.scene.rotation.y += 0.012;
+        renderer.render(scene, camera);
+        requestAnimationFrame(animate3);
+    };
+
+    animate3();
+
+    scene.add(gltf3.scene);
     renderer.render(scene, camera);
-    requestAnimationFrame(animate3);
-  };
-    
-  animate3();
-  
-  scene.add(gltf3.scene);
-  renderer.render(scene, camera);
 });
 
 /***lights***/
 
-  //Ambient
+//Ambient
 
 
 var light = new THREE.AmbientLight(
-  new THREE.Color("hsl(0, 0%, 100%)"),
-  1.25 //0.25
+    new THREE.Color("hsl(0, 0%, 100%)"),
+    1.25 //0.25
 );
 
 light.position.set(0, 0, 0);
@@ -295,9 +295,9 @@ const ambient = new THREE.AmbientLight(0xffffff, 0.25);
 scene.add(ambient);
 
 
-  //Lights//
+//Lights//
 
-  //Spot Light 1
+//Spot Light 1
 
 /*
 var spotLight1 = new THREE.SpotLight( 0xaaaaff, 15 );
@@ -403,8 +403,8 @@ scene.add( spotLighto4 );
 */
 // Render
 function render() {
-  requestAnimationFrame(render);
-  renderer.render(scene, camera);
+    requestAnimationFrame(render);
+    renderer.render(scene, camera);
     //Enable Render Shadows
     renderer.shadowMap.enabled = true;
     //
@@ -416,14 +416,14 @@ render();
 //Screens//
 
 ///*
-  ////tv Screen
+////tv Screen
 
 var tvScreen = new THREE.BoxGeometry(520, 230, 0);
 var material1 = new THREE.MeshBasicMaterial({ color: 0xffffff });
 var screen = new THREE.Mesh(tvScreen, material1);
 scene.add(screen);
 
-    //video on tv//
+//video on tv//
 
 let video1 = document.getElementById('tv');
 let texture1 = new THREE.VideoTexture(video1);
@@ -442,18 +442,18 @@ screen.position.x = 0;
 
 renderer.render(scene, camera);
 
-    //Object Name//
+//Object Name//
 screen.userData.object = true;
 screen.userData.name = "tvScreen";
 
-  ////monitor screen1
+////monitor screen1
 
 var monitorSc1 = new THREE.BoxGeometry(70, 35, 0);
 var material2 = new THREE.MeshBasicMaterial({ color: 0xffffff });
 var screen1 = new THREE.Mesh(monitorSc1, material2);
 scene.add(screen1);
 
-    //video on monitor1//
+//video on monitor1//
 
 let video2 = document.getElementById('ux');
 let texture2 = new THREE.VideoTexture(video2);
@@ -473,7 +473,7 @@ screen1.rotation.y = 2.05;
 
 renderer.render(scene, camera);
 
-    //Object Name//
+//Object Name//
 screen1.userData.object = true;
 screen1.userData.name = "monitorSc1";
 
@@ -484,7 +484,7 @@ var material3 = new THREE.MeshBasicMaterial({ color: 0xffffff });
 var screen2 = new THREE.Mesh(monitorSc2, material3);
 scene.add(screen2);
 
-  //video on monitor2//
+//video on monitor2//
 
 let video3 = document.getElementById('dev');
 let texture3 = new THREE.VideoTexture(video3);
@@ -504,7 +504,7 @@ screen2.rotation.y = 1.55;
 
 renderer.render(scene, camera);
 
-    //Object Name//
+//Object Name//
 screen2.userData.object = true;
 screen2.userData.name = "monitorSc2";
 
@@ -515,7 +515,7 @@ var material4 = new THREE.MeshBasicMaterial({ color: 0xffffff });
 var screen3 = new THREE.Mesh(monitorSc3, material4);
 scene.add(screen3);
 
-    //video on monitor3//
+//video on monitor3//
 
 let video4 = document.getElementById('grow');
 let texture4 = new THREE.VideoTexture(video4);
@@ -535,7 +535,7 @@ screen3.rotation.y = 1.55;
 
 renderer.render(scene, camera);
 
-    //Object Name//
+//Object Name//
 screen3.userData.object = true;
 screen3.userData.name = "monitorSc3";
 
@@ -546,7 +546,7 @@ var material5 = new THREE.MeshBasicMaterial({ color: 0xffffff });
 var screen4 = new THREE.Mesh(monitorSc4, material5);
 scene.add(screen4);
 
-    //video on monitor4//
+//video on monitor4//
 
 let video5 = document.getElementById('us');
 let texture5 = new THREE.VideoTexture(video5);
@@ -566,7 +566,7 @@ screen4.rotation.y = 1.55;
 
 renderer.render(scene, camera);
 
-    //Object Name//
+//Object Name//
 screen4.userData.object = true;
 screen4.userData.name = "monitorSc4";
 
@@ -577,7 +577,7 @@ var material6 = new THREE.MeshBasicMaterial({ color: 0xffffff });
 var screen5 = new THREE.Mesh(monitorSc5, material6);
 scene.add(screen5);
 
-    //video on monitor5//
+//video on monitor5//
 
 let video6 = document.getElementById('comunication');
 let texture6 = new THREE.VideoTexture(video6);
@@ -597,7 +597,7 @@ screen5.rotation.y = 0.93;
 
 renderer.render(scene, camera);
 
-    //Object Name//
+//Object Name//
 screen5.userData.object = true;
 screen5.userData.name = "monitorSc5";
 
@@ -613,150 +613,150 @@ const moveMouse = new THREE.Vector2();
 var object = THREE.Object3D;
 
 window.addEventListener("click", (event) => {
-  clickMouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-  clickMouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    clickMouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    clickMouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
-  raycaster.setFromCamera(clickMouse, camera);
-  const found = raycaster.intersectObjects(scene.children, true);
+    raycaster.setFromCamera(clickMouse, camera);
+    const found = raycaster.intersectObjects(scene.children, true);
 
-  if (found.length > 0 && found[0].object.userData.object) {
-    object = found[0].object;
+    if (found.length > 0 && found[0].object.userData.object) {
+        object = found[0].object;
 
-    let select_section = object.userData.name;
+        let select_section = object.userData.name;
 
-    let main = document.querySelector('#main');
-    let design = document.querySelector('#design');
-    let whyus = document.querySelector('#whyus');
-    let portfolio = document.querySelector('#portfolio');
-    let examples = document.querySelector('#examples');
-    let whatsapp = document.querySelector('#whatsapp');
-    let about_us = document.querySelector('#about_us');
+        let main = document.querySelector('#main');
+        let design = document.querySelector('#design');
+        let whyus = document.querySelector('#whyus');
+        let portfolio = document.querySelector('#portfolio');
+        let examples = document.querySelector('#examples');
+        let whatsapp = document.querySelector('#whatsapp');
+        let about_us = document.querySelector('#about_us');
 
-    switch (select_section) {
-      case "tvScreen":
-        main.style.display = "flex";
-        design.style.display = "none";
-        whyus.style.display = "none";
-        portfolio.style.display = "none";
-        examples.style.display = "none";
-        whatsapp.style.display = 'none';
-        about_us.style.display = 'none';
-        break;
-      case "monitorSc1":
-        main.style.display = "none";
-        design.style.display = "none";
-        whyus.style.display = "none";
-        portfolio.style.display = "flex";
-        examples.style.display = "block";
-        whatsapp.style.display = 'none';
-        about_us.style.display = 'none';
-        break;
-      case "monitorSc2":
-        main.style.display = "none";
-        design.style.display = "flex";
-        whyus.style.display = "none";
-        portfolio.style.display = "none";
-        examples.style.display = "none";
-        whatsapp.style.display = 'none';
-        about_us.style.display = 'none';
-        break;
-      case "monitorSc3":
-        main.style.display = "none";
-        design.style.display = "none";
-        whyus.style.display = "flex";
-        portfolio.style.display = "none";
-        examples.style.display = "none";
-        whatsapp.style.display = 'none';
-        about_us.style.display = 'none';
-        break;
-      case "monitorSc4":
-        main.style.display = "none";
-        design.style.display = "none";
-        whyus.style.display = "none";
-        portfolio.style.display = "none";
-        examples.style.display = "none";
-        whatsapp.style.display = 'none';
-        about_us.style.display = 'flex';
-        break;
-      case "monitorSc5":
-        whatsapp.style.display = 'flex';
-        break;
-      //default:
-      //  main.style.display = "flex";
+        switch (select_section) {
+            case "tvScreen":
+                main.style.display = "flex";
+                design.style.display = "none";
+                whyus.style.display = "none";
+                portfolio.style.display = "none";
+                examples.style.display = "none";
+                whatsapp.style.display = 'none';
+                about_us.style.display = 'none';
+                break;
+            case "monitorSc1":
+                main.style.display = "none";
+                design.style.display = "none";
+                whyus.style.display = "none";
+                portfolio.style.display = "flex";
+                examples.style.display = "block";
+                whatsapp.style.display = 'none';
+                about_us.style.display = 'none';
+                break;
+            case "monitorSc2":
+                main.style.display = "none";
+                design.style.display = "flex";
+                whyus.style.display = "none";
+                portfolio.style.display = "none";
+                examples.style.display = "none";
+                whatsapp.style.display = 'none';
+                about_us.style.display = 'none';
+                break;
+            case "monitorSc3":
+                main.style.display = "none";
+                design.style.display = "none";
+                whyus.style.display = "flex";
+                portfolio.style.display = "none";
+                examples.style.display = "none";
+                whatsapp.style.display = 'none';
+                about_us.style.display = 'none';
+                break;
+            case "monitorSc4":
+                main.style.display = "none";
+                design.style.display = "none";
+                whyus.style.display = "none";
+                portfolio.style.display = "none";
+                examples.style.display = "none";
+                whatsapp.style.display = 'none';
+                about_us.style.display = 'flex';
+                break;
+            case "monitorSc5":
+                whatsapp.style.display = 'flex';
+                break;
+                //default:
+                //  main.style.display = "flex";
+        }
     }
-  }
 
-  if (found.length > 0) {
-    object = found[0].object;
+    if (found.length > 0) {
+        object = found[0].object;
 
-//console.log(object); //Verificar datos del objeto selecionado
+        //console.log(object); //Verificar datos del objeto selecionado
 
-    let select_section2 = object.name;
+        let select_section2 = object.name;
 
-    switch (select_section2) {
-      case "portfolio_1":
-      case "portfolio_2":
-      case "portfolio_3":
-        main.style.display = "none";
-        design.style.display = "none";
-        whyus.style.display = "none";
-        portfolio.style.display = "flex";
-        examples.style.display = "block";
-        whatsapp.style.display = "none";
-        about_us.style.display = "none";
-        break;
-      case "dev_1":
-      case "dev_2":
-      case "dev_3":
-        main.style.display = "none";
-        design.style.display = "flex";
-        whyus.style.display = "none";
-        portfolio.style.display = "none";
-        examples.style.display = "none";
-        whatsapp.style.display = "none";
-        about_us.style.display = "none";
-        break;
-      case "grow_1":
-      case "grow_2":
-      case "grow_3":
-        main.style.display = "none";
-        design.style.display = "none";
-        whyus.style.display = "flex";
-        portfolio.style.display = "none";
-        examples.style.display = "none";
-        whatsapp.style.display = "none";
-        about_us.style.display = "none";
-        break;
-      case "about_us_1":
-      case "about_us_2":
-      case "about_us_3":
-        main.style.display = "none";
-        design.style.display = "none";
-        whyus.style.display = "none";
-        portfolio.style.display = "none";
-        examples.style.display = "none";
-        whatsapp.style.display = "none";
-        about_us.style.display = 'flex';
-        break;
-      case "comunication_1":
-      case "comunication_2":
-      case "comunication_3":
-        whatsapp.style.display = 'flex';
-        break;
+        switch (select_section2) {
+            case "portfolio_1":
+            case "portfolio_2":
+            case "portfolio_3":
+                main.style.display = "none";
+                design.style.display = "none";
+                whyus.style.display = "none";
+                portfolio.style.display = "flex";
+                examples.style.display = "block";
+                whatsapp.style.display = "none";
+                about_us.style.display = "none";
+                break;
+            case "dev_1":
+            case "dev_2":
+            case "dev_3":
+                main.style.display = "none";
+                design.style.display = "flex";
+                whyus.style.display = "none";
+                portfolio.style.display = "none";
+                examples.style.display = "none";
+                whatsapp.style.display = "none";
+                about_us.style.display = "none";
+                break;
+            case "grow_1":
+            case "grow_2":
+            case "grow_3":
+                main.style.display = "none";
+                design.style.display = "none";
+                whyus.style.display = "flex";
+                portfolio.style.display = "none";
+                examples.style.display = "none";
+                whatsapp.style.display = "none";
+                about_us.style.display = "none";
+                break;
+            case "about_us_1":
+            case "about_us_2":
+            case "about_us_3":
+                main.style.display = "none";
+                design.style.display = "none";
+                whyus.style.display = "none";
+                portfolio.style.display = "none";
+                examples.style.display = "none";
+                whatsapp.style.display = "none";
+                about_us.style.display = 'flex';
+                break;
+            case "comunication_1":
+            case "comunication_2":
+            case "comunication_3":
+                whatsapp.style.display = 'flex';
+                break;
+        }
     }
-  }
 });
 
 /***Resize***/
 
-window.addEventListener( 'resize', onWindowResize );
+window.addEventListener('resize', onWindowResize);
 
 function onWindowResize() {
 
     const canvasWidth = window.innerWidth;
     const canvasHeight = window.innerHeight;
 
-    renderer.setSize( canvasWidth, canvasHeight );
+    renderer.setSize(canvasWidth, canvasHeight);
 
     camera.aspect = canvasWidth / canvasHeight;
     camera.updateProjectionMatrix();

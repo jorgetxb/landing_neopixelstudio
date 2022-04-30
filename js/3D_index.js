@@ -1,3 +1,14 @@
+//Open chat link to whatsapp
+document.getElementById('whatsapp').addEventListener('click', function() {
+    document.getElementById('whatsapp-open').style.display = 'flex';
+    document.getElementById('whatsapp').style.display = 'none';
+})
+
+document.getElementById('close_whatsapp').addEventListener('click', function() {
+    document.getElementById('whatsapp-open').style.display = 'none';
+    document.getElementById('whatsapp').style.display = 'block';
+})
+
 //Activate Interactive Option
 document.getElementById("classic_button").addEventListener("click", function() {
     var interactive_elems = document.getElementsByClassName("interactive");
@@ -5,32 +16,33 @@ document.getElementById("classic_button").addEventListener("click", function() {
         interactive_elems[i].style.display = "none";
     }
     document.getElementById("classic").style.display = "block";
+    document.getElementById('parallax__layer__7').style.transform = 'translateZ(0px) scale(2)';
+    document.getElementById('parallax__layer__7').style.top = '335vh';
 });
+
+//Activate trigger animation
+function trigger() {
+    document.getElementById("trigger").style.display = "block";
+}
 
 //Unblock page and effects
 function unlock() {
 
     var time_effect = 3000;
 
-    document.getElementById("trigger").style.display = "block";
-
-    //Artifice to properly work on the web recharge
-    /*setTimeout(function() { document.getElementById("trigger").style.display = "block"; }, time_effect);*/
-
     document.getElementById("parallax").style.overflowY = "scroll";
-
-
     $(".choose").animate({
         opacity: "0",
-        display: "none"
     }, time_effect);
+    $('.choose').hide(time_effect);
 
     function mouse_scroll() {
         document.querySelector(".mouse_svg").style.display = "flex";
         $(".mouse_svg").animate({
             opacity: "0",
-            display: "none"
         }, time_effect);
+
+        $('.mouse_svg').hide(time_effect);
     };
 
     setTimeout(mouse_scroll, time_effect);
