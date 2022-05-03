@@ -312,7 +312,7 @@ input[type=textarea] {
     display: flex;
 }
 
-#design {
+#marketing {
     display: none;
 }
 
@@ -324,11 +324,19 @@ input[type=textarea] {
     display: none;
 }
 
-#examples {
+#examples-wp {
     display: none;
 }
 
-.examples {
+.examples-wp {
+    width: 75%;
+}
+
+#examples-m {
+    display: none;
+}
+
+.examples-m {
     width: 75%;
 }
 
@@ -364,6 +372,14 @@ input[type=textarea] {
 
 #events {
     background-image: url(/resourses/img/portfolio/evento.jpg);
+}
+
+#blossom1 {
+    background-image: url(/resourses/img/portfolio/blossom1-instagram.png);
+}
+
+#blossom2 {
+    background-image: url(/resourses/img/portfolio/blossom2-instagram.png);
 }
 
 #whatsapp {

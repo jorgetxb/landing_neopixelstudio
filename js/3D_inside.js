@@ -619,62 +619,68 @@ window.addEventListener("click", (event) => {
     raycaster.setFromCamera(clickMouse, camera);
     const found = raycaster.intersectObjects(scene.children, true);
 
+    let main = document.querySelector('#main');
+    let marketing = document.querySelector('#marketing');
+    let whyus = document.querySelector('#whyus');
+    let portfolio = document.querySelector('#portfolio');
+    let examples1 = document.querySelector('#examples-wp');
+    let examples2 = document.querySelector('#examples-m');
+    let whatsapp = document.querySelector('#whatsapp');
+    let about_us = document.querySelector('#about_us');
+
     if (found.length > 0 && found[0].object.userData.object) {
         object = found[0].object;
 
         let select_section = object.userData.name;
 
-        let main = document.querySelector('#main');
-        let design = document.querySelector('#design');
-        let whyus = document.querySelector('#whyus');
-        let portfolio = document.querySelector('#portfolio');
-        let examples = document.querySelector('#examples');
-        let whatsapp = document.querySelector('#whatsapp');
-        let about_us = document.querySelector('#about_us');
-
         switch (select_section) {
             case "tvScreen":
                 main.style.display = "flex";
-                design.style.display = "none";
+                marketing.style.display = "none";
+                examples2.style.display = "none";
                 whyus.style.display = "none";
                 portfolio.style.display = "none";
-                examples.style.display = "none";
+                examples1.style.display = "none";
                 whatsapp.style.display = 'none';
                 about_us.style.display = 'none';
                 break;
             case "monitorSc1":
                 main.style.display = "none";
-                design.style.display = "none";
+                marketing.style.display = "none";
+                examples2.style.display = "none";
                 whyus.style.display = "none";
                 portfolio.style.display = "flex";
-                examples.style.display = "block";
+                examples1.style.display = "block";
                 whatsapp.style.display = 'none';
                 about_us.style.display = 'none';
                 break;
             case "monitorSc2":
                 main.style.display = "none";
-                design.style.display = "flex";
+                marketing.style.display = "flex";
+                examples2.style.display = "block";
                 whyus.style.display = "none";
                 portfolio.style.display = "none";
-                examples.style.display = "none";
+                examples1.style.display = "none";
                 whatsapp.style.display = 'none';
                 about_us.style.display = 'none';
                 break;
             case "monitorSc3":
                 main.style.display = "none";
-                design.style.display = "none";
+                marketing.style.display = "none";
+                examples2.style.display = "none";
                 whyus.style.display = "flex";
                 portfolio.style.display = "none";
-                examples.style.display = "none";
+                examples1.style.display = "none";
                 whatsapp.style.display = 'none';
                 about_us.style.display = 'none';
                 break;
             case "monitorSc4":
                 main.style.display = "none";
-                design.style.display = "none";
+                marketing.style.display = "none";
+                examples2.style.display = "none";
                 whyus.style.display = "none";
                 portfolio.style.display = "none";
-                examples.style.display = "none";
+                examples1.style.display = "none";
                 whatsapp.style.display = 'none';
                 about_us.style.display = 'flex';
                 break;
@@ -698,10 +704,11 @@ window.addEventListener("click", (event) => {
             case "portfolio_2":
             case "portfolio_3":
                 main.style.display = "none";
-                design.style.display = "none";
+                marketing.style.display = "none";
+                examples2.style.display = "none";
                 whyus.style.display = "none";
                 portfolio.style.display = "flex";
-                examples.style.display = "block";
+                examples1.style.display = "block";
                 whatsapp.style.display = "none";
                 about_us.style.display = "none";
                 break;
@@ -709,10 +716,11 @@ window.addEventListener("click", (event) => {
             case "dev_2":
             case "dev_3":
                 main.style.display = "none";
-                design.style.display = "flex";
+                marketing.style.display = "flex";
+                examples2.style.display = "block";
                 whyus.style.display = "none";
                 portfolio.style.display = "none";
-                examples.style.display = "none";
+                examples1.style.display = "none";
                 whatsapp.style.display = "none";
                 about_us.style.display = "none";
                 break;
@@ -720,10 +728,11 @@ window.addEventListener("click", (event) => {
             case "grow_2":
             case "grow_3":
                 main.style.display = "none";
-                design.style.display = "none";
+                marketing.style.display = "none";
+                examples2.style.display = "none";
                 whyus.style.display = "flex";
                 portfolio.style.display = "none";
-                examples.style.display = "none";
+                examples1.style.display = "none";
                 whatsapp.style.display = "none";
                 about_us.style.display = "none";
                 break;
@@ -731,10 +740,11 @@ window.addEventListener("click", (event) => {
             case "about_us_2":
             case "about_us_3":
                 main.style.display = "none";
-                design.style.display = "none";
+                marketing.style.display = "none";
+                examples2.style.display = "none";
                 whyus.style.display = "none";
                 portfolio.style.display = "none";
-                examples.style.display = "none";
+                examples1.style.display = "none";
                 whatsapp.style.display = "none";
                 about_us.style.display = 'flex';
                 break;
