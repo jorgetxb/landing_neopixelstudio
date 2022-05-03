@@ -178,5 +178,5 @@ function onWindowResize() {
 }
 
 document.getElementById('enter').addEventListener('click', function() {
-    location.href = 'http://3d.neopixel.studio/office.html'
+    location.href = './office.html'
 });

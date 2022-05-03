@@ -9,24 +9,35 @@ h1 {
     text-align: center;
 }
 
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+}
+
 h2 {
     font-family: sans-serif;
     font-size: 3rem;
     text-align: center;
 }
 
-h3 {
-    font-family: sans-serif;
-    font-size: 2rem;
-    text-align: center;
-    font-weight: 100;
-    color: white;
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 2.25rem;
+    }
 }
 
 p {
     font-family: sans-serif;
     font-size: 1.5rem;
     line-height: 50px;
+}
+
+@media screen and (max-width: 768px) {
+    p {
+        font-size: 1.125rem;
+        line-height: 25px;
+    }
 }
 
 .section-b h1,
@@ -62,6 +73,18 @@ p {
     padding: 25px;
 }
 
+.paragraph {
+    padding: 25px;
+    max-width: 768px;
+    margin: auto;
+}
+
+@media (orientation: portrait) {
+    .paragraph {
+        text-align: center;
+    }
+}
+
 .content {
     display: grid;
     gap: 2rem;
@@ -83,18 +106,20 @@ p {
     background-color: var(--background);
 }
 
-.triangle {
+.triangle-t {
     width: 100%;
     height: 100%;
     margin-bottom: -5px;
 }
 
-#promises {
-    background-color: white;
+.triangle-b {
+    width: 100%;
+    height: 100%;
+    margin-top: -5px;
 }
 
-#promises .content {
-    align-items: baseline;
+#promises {
+    background-color: white;
 }
 
 #promises p {
@@ -110,12 +135,19 @@ p {
     width: 100%;
     height: 100px;
     background-color: white;
+    margin-top: -5px;
 }
 
 .subtitle2 {
     text-align: center;
     margin: auto;
-    max-width: 768px;
+    max-width: 75%;
+}
+
+@media (orientation: landscape) {
+    .subtitle2 {
+        max-width: 768px;
+    }
 }
 
 .marketing {
@@ -127,9 +159,9 @@ p {
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 95vh;
+    height: 60vh;
     width: 100%;
-    max-width: 75vw;
+    max-width: 60vw;
     margin: auto;
     border-radius: 25px;
 }
@@ -139,9 +171,9 @@ p {
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 85vh;
+    height: 60vh;
     width: 100%;
-    max-width: 75vw;
+    max-width: 60vw;
     margin: auto;
     border-radius: 25px;
 }
@@ -151,9 +183,9 @@ p {
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 70vh;
+    height: 60vh;
     width: 100%;
-    max-width: 75vw;
+    max-width: 60vw;
     margin: auto;
     border-radius: 25px;
 }
@@ -163,15 +195,16 @@ p {
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 80vh;
+    height: 60vh;
     width: 100%;
-    max-width: 75vw;
+    max-width: 60vw;
     margin: auto;
     border-radius: 25px;
 }
 
 .sample {
     transition: 1s;
+    height: 60vh;
 }
 
 .sample:hover {
@@ -183,16 +216,16 @@ p {
     width: 100%;
     height: 100px;
     background-color: var(--background);
+    margin-top: -5px;
 }
 
 #blossom {
     background-image: url('../resourses/img/portfolio/blossom1-instagram.png');
-    background-position: center top;
+    background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 195vh;
-    width: 100%;
-    max-width: 75vw;
+    width: 75%;
+    max-width: 60vw;
     margin: auto;
     border-radius: 25px;
     border: solid 3px #fe99b7;
@@ -200,12 +233,11 @@ p {
 
 #blossom2 {
     background-image: url('../resourses/img/portfolio/blossom2-instagram.png');
-    background-position: center top;
+    background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 150vh;
-    width: 100%;
-    max-width: 75vw;
+    width: 75%;
+    max-width: 60vw;
     margin: auto;
     border-radius: 25px;
     border: solid 3px #bc2a42;
@@ -221,7 +253,7 @@ p {
     background-image: url('../resourses/img/whatsapp.svg');
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: 75%;
+    background-size: 60%;
     height: 85px;
     width: 85px;
     border-radius: 50%;
@@ -294,6 +326,12 @@ p {
     grid-template-columns: 20% auto;
     align-items: center;
     justify-content: left;
+}
+
+@media screen and (max-width: 768px) {
+    #w_head {
+        width: 90%;
+    }
 }
 
 #w_img {
