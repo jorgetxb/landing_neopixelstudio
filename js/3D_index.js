@@ -115,6 +115,7 @@ function render() {
     const b = 0;
 
     if (window.pageYOffset > 0 && $('#classic:visible').length == 0) {
+        document.getElementById('whatsapp').style.display = 'none';
         document.getElementById('enter').style.display = 'block';
         camera.position.y = cam_height_init - (window.pageYOffset * speed_height_change);
         cam_angle += (window.pageYOffset * speed_angle_change);
