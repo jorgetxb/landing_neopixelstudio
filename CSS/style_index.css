@@ -256,8 +256,14 @@ p {
     height: 20vh;
     background-position: center;
     background-repeat: repeat;
-    background-size: 20vh;
+    background-size: 23vh;
     transform: rotateX(45deg);
+}
+
+@media (orientation: portrait) {
+    #floor2 {
+        background-size: 20vh;
+    }
 }
 
 .parallax__layer__ground3 {
