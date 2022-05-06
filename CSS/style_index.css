@@ -41,7 +41,7 @@ p {
 #icon_loader {
     width: 150px;
     height: 150px;
-    background-image: url('http://neopixel.studio/wp-content/uploads/neopixelstudio.gif');
+    background-image: url('../resourses/img/neopixelstudio.gif');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -135,7 +135,7 @@ p {
     height: 100vh;
     overflow-x: hidden;
     overflow-y: hidden;
-    position: relative;
+    position: fixed;
     top: 0;
     right: 0;
     left: 0;
