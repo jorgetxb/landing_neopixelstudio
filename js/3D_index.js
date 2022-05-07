@@ -44,9 +44,7 @@ function unlock() {
 
         $('.mouse_svg').hide(time_effect);
     };
-
     setTimeout(mouse_scroll, time_effect);
-
 }
 
 //Global variables
