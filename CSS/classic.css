@@ -2,6 +2,16 @@
     --background: #0b0c12;
 }
 
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
 h1 {
     font-family: sans-serif;
     font-size: 4rem;
@@ -202,12 +212,12 @@ p {
     border-radius: 25px;
 }
 
-.sample {
+.feed {
     transition: 1s;
     height: 60vh;
 }
 
-.sample:hover {
+.feed:hover {
     transform: scale(1.1);
     box-shadow: 10px 10px 15px #333;
 }
