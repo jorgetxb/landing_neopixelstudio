@@ -40,7 +40,6 @@ function trigger() {
     var logoFooter = document.createElement('div');
     logoFooter.id = 'logo-footer';
     document.getElementById('footer').appendChild(logoFooter);
-    console.log('prueba de alcance2');
 
     var mail = document.createElement('div');
     mail.id = 'mail';
@@ -98,7 +97,6 @@ function showFooter() {
     var logoFooter = document.createElement('div');
     logoFooter.id = 'logo-footer';
     document.getElementById('footer').appendChild(logoFooter);
-    console.log('prueba de alcance2');
 
     var mail = document.createElement('div');
     mail.id = 'mail';
