@@ -328,13 +328,14 @@ p {
     width: 100vw;
 }
 
-.footer {
+#footer {
     display: flex;
     flex-direction: column;
-    height: 100%;
     width: 100%;
     justify-content: space-around;
     align-items: center;
+    background-color: var(--background);
+    position: relative;
 }
 
 #enter {
@@ -374,7 +375,7 @@ p {
     }
 }
 
-.logo-footer {
+#logo-footer {
     background-image: url('../resourses/img/logo.png');
     background-position: center center;
     background-repeat: no-repeat;
@@ -383,13 +384,14 @@ p {
     height: 150px;
 }
 
-.mail {
+#mail {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 5px 0;
 }
 
-.mail .icon {
+#mail .icon {
     background-image: url('../resourses/img/mail.svg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -399,19 +401,14 @@ p {
     margin-right: 15px;
 }
 
-.mail .text,
-.numero .text,
-.copyright {
-    color: white;
-}
-
-.numero {
+#numero {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 5px 0;
 }
 
-.numero .icon {
+#numero .icon {
     background-image: url('../resourses/img/whatsapp.svg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -421,6 +418,13 @@ p {
     margin-right: 15px;
 }
 
-.copyright p {
-    font-size: 0.75rem;
+#copyright p {
+    font-size: 0.85rem;
+    padding: 5px 0;
+}
+
+#text,
+#number,
+#copyright {
+    color: white;
 }

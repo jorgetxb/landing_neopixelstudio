@@ -381,7 +381,7 @@ p {
     background-size: cover;
 }
 
-#text {
+#cheers {
     background-color: white;
     width: 75%;
     height: auto;
@@ -390,7 +390,7 @@ p {
     margin: 20px;
 }
 
-#text p {
+#cheers p {
     letter-spacing: unset;
 }
 

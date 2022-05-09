@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./CSS/style_index.css" />
     <link rel="stylesheet" href="./CSS/sky.css" />
     <link rel="stylesheet" href="./CSS/classic.css" />
@@ -34,7 +33,7 @@
     </div>
 
     <div class="choose">
-        <div onclick="unlock()" id="classic_button" class="button"> <a>Clásico</a> </div>
+        <div onclick="unlock() ,showFooter()" id="classic_button" class="button"> <a>Clásico</a> </div>
 
         <div onclick="unlock(), trigger()" id="interactive_button">
             <div class="info_beta">(Beta_Safari_not_supported)</div>
@@ -242,50 +241,26 @@
                 <img src="./resourses/img/classic/step_triangle2.svg" alt="">
             </div>
 
-            <!-- footer Clásico -->
-            <div class="footer">
-                <div class="logo-footer"></div>
-                <div class="mail">
+            <!-- footer -->
+            <!-- <div id="footer">
+                <div id="logo-footer"></div>
+                <div id="mail">
                     <div class="icon"></div>
-                    <div class="text">
+                    <div id="text">
                         <p>staff@neopixel.studio</p>
                     </div>
                 </div>
-                <div class="numero">
+                <div id="numero">
                     <div class="icon"></div>
-                    <div class="text">
-                        <p>+593996639450</p>
+                    <div id="number">
+                        <p>+593 996639450</p>
                     </div>
                 </div>
-                <div class="copyright">
+                <div id="copyright">
                     <p>copyright © 2022 NeoPixelStudio</p>
                 </div>
-            </div>
+            </div> -->
 
-        </div>
-    </div>
-
-    <!-- footer Interactivo -->
-    <div id="trigger">
-        <div id="enter" class="bounce">
-        </div>
-        <div class="footer">
-            <div class="logo-footer"></div>
-            <div class="mail">
-                <div class="icon"></div>
-                <div class="text">
-                    <p>staff@neopixel.studio</p>
-                </div>
-            </div>
-            <div class="numero">
-                <div class="icon"></div>
-                <div class="text">
-                    <p>+593996639450</p>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>copyright © 2022 NeoPixelStudio</p>
-            </div>
         </div>
     </div>
 
@@ -302,7 +277,7 @@
             <div id="w_description">Contesta en alrededor de una hora</div>
         </div>
         <div id="container_text">
-            <div id="text">
+            <div id="cheers">
                 <p>¡Hola!, ¡Qué gusto que estés aquí!</p>
                 <p>¿Cómo puedo ayudarte?</p>
             </div>
