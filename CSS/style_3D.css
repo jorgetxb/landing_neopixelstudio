@@ -12,6 +12,33 @@ html {
 /****Fonts****/
 
 
+/*Press Start*/
+
+@font-face {
+    font-family: "pixel";
+    src: url('../resourses/fonts/ANTICLIMAX.TTF');
+}
+
+
+/*Nothing you could do*/
+
+@font-face {
+    font-family: "nothing";
+    src: url('../resourses/fonts/NothingYouCouldDo-Regular.ttf');
+}
+
+
+/*Helvetica Light*/
+
+@font-face {
+    font-family: "helvetical";
+    src: url('../resourses/fonts/HelveticaNeueLTCom-UltLt.ttf');
+}
+
+
+/***/
+
+
 /*pacifico*/
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
@@ -31,21 +58,14 @@ html {
 
 /*******/
 
-a {
-    text-decoration: none;
-    color: white;
-}
-
 body {
     margin: 0;
     background-color: #090a0f;
 }
 
 h1 {
-    font-family: "Pacifico", sans-serif;
+    font-family: "pixel", sans-serif;
     font-size: 3rem;
-    font-weight: 100;
-    letter-spacing: 3px;
     text-align: center;
 }
 
@@ -62,10 +82,8 @@ h1 {
 }
 
 h2 {
-    font-family: "Niramit", sans-serif;
+    font-family: "nothing", sans-serif;
     font-size: 2rem;
-    font-weight: 100;
-    letter-spacing: 2.5px;
     text-align: center;
 }
 
@@ -82,21 +100,22 @@ h2 {
 }
 
 h2 span {
-    font-family: 'Nothing You Could Do', cursive;
+    font-size: 2rem;
+    text-transform: lowercase;
+}
+
+a {
+    font-family: 'roboto', sans-serif;
+    text-decoration: none;
+    color: #bc2a42;
 }
 
 p {
-    font-family: "roboto", sans-serif;
-    font-size: 1rem;
-    letter-spacing: 2.5px;
+    font-family: "helvetical", sans-serif;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
     width: 75%;
-    line-height: 2rem;
-}
-
-input[type=textarea] {
-    border: none;
-    height: auto;
-    width: 90%;
+    line-height: 50px;
 }
 
 #loader {
@@ -367,6 +386,11 @@ input[type=textarea] {
 .pages:hover {
     box-shadow: 7.5px 7.5px 15px grey;
     transform: scale(1);
+}
+
+.info {
+    display: flex;
+    justify-content: center;
 }
 
 .feed {
