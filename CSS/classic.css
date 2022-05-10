@@ -56,7 +56,7 @@ h1 {
 
 h2 {
     font-family: 'nothing', sans-serif;
-    font-size: 3rem;
+    font-size: 2.75rem;
     text-align: center;
 }
 
@@ -67,8 +67,9 @@ h2 {
 }
 
 h2 span {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-transform: lowercase;
+    color: #782aff;
 }
 
 a {
@@ -88,6 +89,13 @@ p {
     margin: 0;
     line-height: 50px;
     letter-spacing: 1px;
+    font-weight: lighter;
+}
+
+@media (orientation: portrait) {
+    p {
+        font-weight: 600;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -148,7 +156,6 @@ p {
     grid-template-columns: 1fr 1fr;
     max-width: 1080px;
     margin: auto;
-    align-items: center;
 }
 
 @media (orientation: portrait) {
@@ -186,6 +193,8 @@ p {
 .lottie {
     height: 50vh;
     margin: auto;
+    margin-bottom: -75px;
+    margin-top: -50px;
 }
 
 .space-w {
@@ -273,6 +282,7 @@ p {
 
 .info a {
     color: #bc2a42;
+    font-weight: bold;
 }
 
 .feed {

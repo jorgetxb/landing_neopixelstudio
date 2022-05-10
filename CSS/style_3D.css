@@ -102,6 +102,7 @@ h2 {
 h2 span {
     font-size: 2rem;
     text-transform: lowercase;
+    color: #782aff;
 }
 
 a {
@@ -116,6 +117,12 @@ p {
     letter-spacing: 1px;
     width: 75%;
     line-height: 50px;
+}
+
+@media (orientation: portrait) {
+    p {
+        font-weight: 600;
+    }
 }
 
 #loader {
