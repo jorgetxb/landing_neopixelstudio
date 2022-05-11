@@ -201,7 +201,7 @@ p {
     width: 100%;
     height: 100px;
     background-color: white;
-    margin-top: -5px;
+    margin-top: -2px;
 }
 
 .subtitle2 {
@@ -220,12 +220,21 @@ p {
     background-color: white;
 }
 
+.sample {
+    transition: 1s;
+    height: 60vh;
+}
+
+.sample:hover {
+    transform: scale(1.1);
+    box-shadow: 10px 10px 15px #333;
+}
+
 #moda {
     background-image: url('../resourses/img/portfolio/kelsimariep.jpg');
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 60vh;
     width: 100%;
     max-width: 60vw;
     margin: auto;
@@ -237,19 +246,17 @@ p {
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 60vh;
     width: 100%;
     max-width: 60vw;
     margin: auto;
     border-radius: 25px;
 }
 
-#blog {
-    background-image: url('../resourses/img/portfolio/blog_cafe.jpg');
+#atabey {
+    background-image: url('../resourses/img/portfolio/atabey.png');
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 60vh;
     width: 100%;
     max-width: 60vw;
     margin: auto;
@@ -261,7 +268,6 @@ p {
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 60vh;
     width: 100%;
     max-width: 60vw;
     margin: auto;
@@ -273,7 +279,7 @@ p {
     max-width: 1080px;
     margin: auto;
     text-align: center;
-    padding: 50px 0;
+    padding: 50px 0 0 0;
 }
 
 .info p {
@@ -299,7 +305,7 @@ p {
     width: 100%;
     height: 100px;
     background-color: var(--background);
-    margin-top: -5px;
+    margin-top: -2px;
 }
 
 #blossom {
@@ -314,8 +320,8 @@ p {
     border: solid 3px #fe99b7;
 }
 
-#blossom2 {
-    background-image: url('../resourses/img/portfolio/blossom2-instagram.png');
+#isabel_lopez {
+    background-image: url('../resourses/img/portfolio/isabel_lopez.jpg');
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
