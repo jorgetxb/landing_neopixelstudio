@@ -23,6 +23,8 @@ document.getElementById("classic_button").addEventListener("click", function() {
 //Activate trigger animation
 function trigger() {
 
+    window.scrollTo(0, 0);
+
     var trigger = document.createElement('div');
     trigger.id = 'trigger';
     document.body.appendChild(trigger);
@@ -144,7 +146,7 @@ function showFooter() {
 //Unblock page and effects
 function unlock() {
 
-    var time_effect = 3000;
+    var time_effect = 1500;
 
     document.getElementById("parallax").style.overflowY = "scroll";
     $(".choose").animate({
@@ -162,6 +164,7 @@ function unlock() {
     };
     setTimeout(mouse_scroll, time_effect);
 
+    /*document.getElementById("parallax").focus();*/
 }
 
 //Global variables
