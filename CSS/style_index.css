@@ -39,6 +39,20 @@ body {
 
 /**************************/
 
+.choose {
+    position: absolute;
+    display: flex;
+    top: 90vh;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    justify-content: space-around;
+    align-items: end;
+    z-index: 4;
+    width: 0vw;
+}
+
 .button {
     padding: 0 30px;
     margin-bottom: 10vh;
@@ -77,20 +91,6 @@ body {
         font-size: 1rem;
         margin-top: 50px;
     }
-}
-
-.choose {
-    position: absolute;
-    display: flex;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    justify-content: space-around;
-    align-items: end;
-    z-index: 4;
-    width: 0vw;
 }
 
 .mouse_svg {
@@ -140,18 +140,14 @@ body {
     display: block;
     position: absolute;
     bottom: 0;
-    min-height: 30vh;
+    height: 30vh;
 }
 
 .parallax_layer_logo {
     transform: translateZ(-450px) scale(5.5);
     opacity: 0;
     top: 100vh;
-    animation: appear 3s 2s forwards;
-}
-
-.parallax_layer_logo img {
-    max-height: 50%;
+    animation: appear 5s 3s forwards;
 }
 
 @keyframes appear {
